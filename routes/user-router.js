@@ -7,7 +7,23 @@
 const express = require('express');
 const router  = express.Router();
 
-const { getUserById } = require('../lib/users');
+const { getUserById, createUser } = require('../lib/users');
+
+// POST /api/users
+router.post("/", (req, res) => {
+  const userInfo = {};
+  createUser(req.body)
+    .then(user => {
+      if (!user) {
+        throw "Could not create user!";
+      }
+
+      res.json(user);
+    })
+    .catch(errorMessage => {
+      res.status(500).json({ error: errorMessage })
+    });
+});
 
 // GET /api/users/:user_id
 router.get("/:user_id", (req, res) => {
@@ -16,7 +32,7 @@ router.get("/:user_id", (req, res) => {
       if (!user) {
         throw "User not found!";
       }
-      
+
       delete user.password;
       res.json(user);
     })
