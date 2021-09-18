@@ -11,8 +11,15 @@ const { getUserById } = require('../lib/users');
 
 // GET /api/users/:user_id
 router.get("/:user_id", (req, res) => {
-  getUserById(req.params.id)
-    .then(user => { res.json(user); })
+  getUserById(req.params.user_id)
+    .then(user => {
+      if (!user) {
+        throw "User not found!";
+      }
+      
+      delete user.password;
+      res.json(user);
+    })
     .catch(errorMessage => {
       res.status(500).json({ error: errorMessage });
     });
