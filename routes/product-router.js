@@ -1,6 +1,6 @@
 const express = require('express');
 const router  = express.Router();
-const productQueries = require('./lib/products');
+const productQueries = require('../lib/products');
 
 // GET /products
 
