@@ -16,6 +16,8 @@ router.get("/:user_id", (req, res) => {
       if (!user) {
         throw "User not found!";
       }
+      
+      delete user.password;
       res.json(user);
     })
     .catch(errorMessage => {
