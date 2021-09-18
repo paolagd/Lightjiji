@@ -7,7 +7,7 @@
 const express = require('express');
 const router  = express.Router();
 
-const { getUserById } = require('./lib/users');
+const { getUserById } = require('../lib/users');
 
 // GET /api/users/:user_id
 router.get("/:user_id", (req, res) => {
