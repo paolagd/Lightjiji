@@ -14,10 +14,9 @@ router.get('/', (req, res) => {
 
 router.post('/', (req, res) => {
  //cookie const user_id = req.session.cookieName
- const user_id = 20;
- productQueries.createProductListing({seller_id: user_id, ...req.body})
- .then(product =>
-   res.json({product}))
+ //const user_id = 20;
+ productQueries.createProductListing({...req.body})
+ .then(product => console.log(product))
    .catch(errorMessage => res.status(500).json({ error: errorMessage }));
 });
 
