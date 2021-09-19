@@ -1,17 +1,16 @@
 const express = require('express');
 const router  = express.Router();
 
+const { getAllUserConversations } = require('../lib/messages');
+
+// GET /api/messages
 router.get("/", (req, res) => {
-  db.query(`SELECT * FROM users;`)
-    .then(data => {
-      const users = data.rows;
-      res.json({ users });
+  const userId = 1; // sessions not setup yet - change me
+  getAllUserConversations(userId)
+    .then(conversations => {
+      res.json(conversations);
     })
-    .catch(err => {
-      res
-        .status(500)
-        .json({ error: err.message });
-    });
+    .catch(errorMessage => res.status(500).json({ error: errorMessage }));
 });
 
 module.exports = router;
