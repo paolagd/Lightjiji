@@ -65,6 +65,7 @@ router.put("/:product_id/sold", (req, res) => {
 // DELETE /products/:product_id
 router.delete("/:product_id", (req, res) => {
   const productId = req.params.product_id;
+
   productQueries.deleteProductListing(productId)
     .then(product => {
       res.json({ product });

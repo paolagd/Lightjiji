@@ -9,6 +9,18 @@ const router  = express.Router();
 
 const { getUserById, createUser } = require('../lib/users');
 
+// LOGIN
+router.get('/login/:id', (req, res) => {
+  // cookie-session
+  req.session.user_id = req.params.id;
+
+  // cookie-parser
+  res.cookie('user_id', req.params.id);
+
+  // redirect the client
+  res.redirect('/');
+});
+
 // POST /api/users
 router.post("/", (req, res) => {
   createUser(req.body)
@@ -39,5 +51,7 @@ router.get("/:user_id", (req, res) => {
       res.status(500).json({ error: errorMessage });
     });
 });
+
+
 
 module.exports = router;
