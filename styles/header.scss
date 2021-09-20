@@ -1,0 +1,38 @@
+$font-size : 30px;
+$color: #055052;
+
+.navbar {
+  background-color: #CEE5D0;
+  padding: 40px 20px;
+  font-size: $font-size;
+
+  .form-control{
+    width: 340px;
+    height: 45px;
+    margin-left: 60px;
+  }
+  .navbar-brand{
+    font-size: $font-size;
+  }
+
+  .nav-link{
+   margin-right: 15px;
+   color:$color;
+  }
+
+  .navbar-toggler{
+    background-color:$color;
+  }
+
+  .fa-store-alt{
+    color:$color;
+  }
+
+  .fa-heart:hover{
+    color: red;
+  }
+
+  .fa-envelope:hover{
+    color: blue;
+  }
+}
