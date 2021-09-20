@@ -9,7 +9,8 @@ const {
 
 // GET /api/messages
 router.get("/", (req, res) => {
-  const myUserId = 1; // sessions not setup yet - change me
+  const myUserId = req.session.user_id;
+
   getAllUserConversations(myUserId)
     .then(conversations => {
       res.json(conversations);
@@ -19,7 +20,7 @@ router.get("/", (req, res) => {
 
 // GET /api/messages/:other_id
 router.get("/:other_id", (req, res) => {
-  const myUserId = 1;
+  const myUserId = req.session.user_id;
   const otherId = req.params.other_id;
 
   getMessagesWithUser(myUserId, otherId)
@@ -31,7 +32,7 @@ router.get("/:other_id", (req, res) => {
 
 // POST /api/messages/:other_id
 router.post("/:other_id", (req, res) => {
-  const fromUserId = 1;
+  const fromUserId = req.session.user_id;
   const toUserId = req.params.other_id;
   const messageContent = req.body.message;
 
