@@ -27,7 +27,11 @@ router.post('/', (req, res) => {
 
 // GET /products/:product_id
 router.get("/:product_id", (req, res) => {
-
+  const userId = req.session.userId;
+  if (!userId) {
+    res.error("The user doesn't exist;");
+    return;
+  }
   productQueries.getProductById(req.params.product_id)
     .then(product => {
       res.json({ product });
