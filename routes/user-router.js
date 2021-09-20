@@ -11,7 +11,6 @@ const { getUserById, createUser } = require('../lib/users');
 
 // POST /api/users
 router.post("/", (req, res) => {
-  const userInfo = {};
   createUser(req.body)
     .then(user => {
       if (!user) {
