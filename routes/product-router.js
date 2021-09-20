@@ -13,14 +13,13 @@ router.get('/', (req, res) => {
 //POST /api/products
 
 router.post('/', (req, res) => {
-  const userId = req.session.userId;
+  const userId = req.session.user_id;
   if (!userId) {
     res.error("The user doesn't exist;");
     return;
   }
-  //cookie const user_id = req.session.cookieName
-  const user_id = 3; //change later
-  productQueries.createProductListing({ ...req.body, seller_id: user_id })
+
+  productQueries.createProductListing({ ...req.body, seller_id: userId })
     .then(product => res.json({ product }))
     .catch(errorMessage => res.status(500).json({ error: errorMessage }));
 });
