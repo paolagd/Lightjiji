@@ -2,7 +2,7 @@ const express = require('express');
 const router = express.Router();
 const productQueries = require('../lib/products');
 
-//GET /products
+//GET /api/products
 
 router.get('/', (req, res) => {
   productQueries.getProductsSatisfying(req.query)
@@ -10,12 +10,12 @@ router.get('/', (req, res) => {
   .catch(errorMessage => res.status(500).json({ error: errorMessage }));
 });
 
-//POST /products
+//POST /api/products
 
 router.post('/', (req, res) => {
  //cookie const user_id = req.session.cookieName
- //const user_id = 20;
- productQueries.createProductListing({...req.body})
+ const user_id = 3; //change later
+ productQueries.createProductListing({...req.body, seller_id: user_id})
  .then(product => res.json({ product }))
    .catch(errorMessage => res.status(500).json({ error: errorMessage }));
 });
