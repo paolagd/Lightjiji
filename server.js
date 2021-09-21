@@ -53,6 +53,46 @@ app.use("/api/messages", messageRoutes);
 //   res.render("index");
 // });
 
+app.get("/messages", (req, res) => {
+  const userInfo = {
+    1: {
+      first_name: "Paola",
+      last_name: "G",
+      phone_number: "6472322222",
+      email: "paola@gmail.com"
+    },
+    3: {
+      first_name: "Jayrese",
+      last_name: "H",
+      phone_number: "6472325522",
+      email: "jay@gmail.com"
+    }
+  };
+  const messages = [
+    {
+      "message_id": 18,
+      "author_id": 1,
+      "content": "Test with sessions!",
+      "time_sent": "2021-09-20T16:17:17.948Z"
+    },
+    {
+      "message_id": 12,
+      "author_id": 3,
+      "content": "Message 6",
+      "time_sent": "2021-09-10T19:58:01.360Z"
+    },
+    {
+      "message_id": 16,
+      "author_id": 1,
+      "content": "Message on the 12th 2pm",
+      "time_sent": "2021-09-12T14:00:01.360Z"
+    }
+  ];
+  const user = userInfo[3];
+
+  res.render("conversations", { userInfo, messages, user });
+});
+
 app.listen(PORT, () => {
   console.log(`Example app listening on port ${PORT}`);
 });
