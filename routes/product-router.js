@@ -1,6 +1,7 @@
 const express = require('express');
 const router = express.Router();
 const productQueries = require('../lib/products');
+const timeago = require('timeago.js');
 
 //GET /api/products
 
@@ -27,13 +28,14 @@ router.post('/', (req, res) => {
 // GET /products/:product_id
 router.get("/:product_id", (req, res) => {
   const userId = req.session.userId;
-  if (!userId) {
-    res.error("The user doesn't exist;");
-    return;
-  }
+  // if (!userId) {
+  //   res.error("The user doesn't exist;");
+  //   return;
+  // }
   productQueries.getProductById(req.params.product_id)
     .then(product => {
-      res.json({ product });
+      const templateVars = {user: userId, product, timeago}
+      res.render('review-products', templateVars);
     })
     .catch(errorMessage => {
       res.status(500).json({ error: errorMessage });
