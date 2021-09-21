@@ -9,6 +9,9 @@ const bodyParser = require("body-parser");
 const sass       = require("node-sass-middleware");
 const app        = express();
 const morgan     = require('morgan');
+const { getAllUserConversations } = require("./lib/messages");
+const { getUserById } = require('./lib/users');
+const moment = require('moment');
 var cookieSession = require('cookie-session');
 
 // Load the logger first so all (static) HTTP requests are logged to STDOUT
@@ -52,45 +55,45 @@ app.use("/api/messages", messageRoutes);
 // app.get("/", (req, res) => {
 //   res.render("index");
 // });
-
 app.get("/messages", (req, res) => {
-  const userInfo = {
-    1: {
-      first_name: "Paola",
-      last_name: "G",
-      phone_number: "6472322222",
-      email: "paola@gmail.com"
-    },
-    3: {
-      first_name: "Jayrese",
-      last_name: "H",
-      phone_number: "6472325522",
-      email: "jay@gmail.com"
-    }
+  const user = {
+    id: 3,
+    first_name: "Jayrese",
+    last_name: "H",
+    phone_number: "6472325522",
+    email: "jay@gmail.com"
   };
-  const messages = [
-    {
-      "message_id": 18,
-      "author_id": 1,
-      "content": "Test with sessions!",
-      "time_sent": "2021-09-20T16:17:17.948Z"
-    },
-    {
-      "message_id": 12,
-      "author_id": 3,
-      "content": "Message 6",
-      "time_sent": "2021-09-10T19:58:01.360Z"
-    },
-    {
-      "message_id": 16,
-      "author_id": 1,
-      "content": "Message on the 12th 2pm",
-      "time_sent": "2021-09-12T14:00:01.360Z"
-    }
-  ];
-  const user = userInfo[3];
 
-  res.render("conversations", { userInfo, messages, user });
+  getAllUserConversations(user.id)
+    .then(conversations => Promise.all(conversations.map(convo => {
+      const { other_id, author_id } = convo;
+      console.log('Other ID:', other_id, 'Author ID:', author_id, convo);
+      return Promise
+        .all([getUserById(other_id), getUserById(author_id)])
+        .then(([other, author]) => ({
+          ...convo,
+          other,
+          author,
+          time_sent: moment(convo.time_sent).fromNow()
+        }));
+    }))).then(conversations => {
+      console.log(conversations);
+      res.render("conversation-list", { user, conversations });
+    })
+    .catch(errorMessage => {
+      res.status(500).render({ error: errorMessage });
+    })
+});
+
+app.get("/messages/:other_id", (req, res) => {
+  const user = {
+    first_name: "Jayrese",
+    last_name: "H",
+    phone_number: "6472325522",
+    email: "jay@gmail.com"
+  };
+
+  res.render("conversation", { user });
 });
 
 app.listen(PORT, () => {

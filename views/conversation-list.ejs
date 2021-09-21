@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <link rel="stylesheet"
+          href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/css/bootstrap.min.css"
+          integrity="sha384-F3w7mX95PdgyTmZZMECAngseQB83DfGTowi0iMjiWaeVhAn4FJkqJByhZMI3AhiU"
+          crossorigin="anonymous" />
+    <link rel="stylesheet"
+          href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css"
+          integrity="sha512-1ycn6IcaQQ40/MKBW2W4Rhis/DbILU74C1vSrLJxCq57o941Ym01SwNsOMqvEBFlcgUa6xLiPY/NS5R+E6ztJQ=="
+          crossorigin="anonymous"
+          referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="/styles/header.css" type="text/css" />
+    <link rel="stylesheet" href="/styles/conversations.css" />
+
+    <script type="text/javascript" src="/vendor/jquery-3.0.0.js"></script>
+    <script type="text/javascript" src="/scripts/app.js"></script>
+
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.3/dist/umd/popper.min.js"
+            integrity="sha384-W8fXfP3gkOKtndU4JGtKDvXbO53Wy8SZCQHczT5FMiiqmQfUpWbYdTil/SxwZgAN"
+            crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/js/bootstrap.min.js"
+            integrity="sha384-skAcpIdS7UcVUC05LJ9Dxay8AXcDYfBJqt1CJ85S/CFujBsIzCIv+l9liuYLaMQ/"
+            crossorigin="anonymous"></script>
+  </head>
+
+  <body>
+    <%- include("partials/_header", {user: locals.user}); %>
+    <section class="conversation-list">
+      <% for (const {other_id, other, author, time_sent, content } of locals.conversations) { %>
+      <article class="conversation">
+        <img class="conversation--profile-pic" src="https://pbs.twimg.com/profile_images/573692360263004161/gOvizBEP_400x400.jpeg">
+        <div>
+          <div class="conversation--name-date">
+            <a class="conversation--other-name" href="/messages/<%= other_id %>">
+              <%= `${other.first_name} ${other.last_name}` %>
+            </a>
+            <span><%= time_sent %></span>
+          </div>
+          <span class="conversation--author-name"><%= `${other.first_name} ${other.last_name}` %></span>
+          <p><%= content %></p>
+        </div>
+      </article>
+      <% } %>
+    </section>
+  </body>
+</html>

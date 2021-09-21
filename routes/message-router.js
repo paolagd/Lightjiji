@@ -2,21 +2,9 @@ const express = require('express');
 const router  = express.Router();
 
 const {
-  getAllUserConversations,
   getMessagesWithUser,
   sendMessage
 } = require('../lib/messages');
-
-// GET /api/messages
-router.get("/", (req, res) => {
-  const myUserId = req.session.user_id;
-
-  getAllUserConversations(myUserId)
-    .then(conversations => {
-      res.json(conversations);
-    })
-    .catch(errorMessage => res.status(500).json({ error: errorMessage }));
-});
 
 // GET /api/messages/:other_id
 router.get("/:other_id", (req, res) => {
