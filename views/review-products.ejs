@@ -18,13 +18,13 @@
   <main>
     <div class="container">
       <div class="row">
-        <div class="col-12 col-xl-7 product-info">
+        <div class="col-xl-7 product-info">
           <h2><%= product.name %></h2>
           <h3>$<%= product.price/100 %></h3>
           <img src = <%= product.image_url %>>
           <h4><%= product.description%></h4>
         </div>
-        <div class="col-12 col-xl-4 contact-seller">
+        <div class="col-xl-4 contact-seller">
           <h5>Posted <%= timeago.format(product.created_on) %></h5>
           <form action="/api/messages" method="POST">
             <h3>Contact Seller</h3>

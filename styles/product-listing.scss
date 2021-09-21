@@ -6,6 +6,11 @@
   }
 }
 
+a{
+  text-decoration:none;
+   color:inherit;
+}
+
 .product{
   height: 250px;
   margin-left: 10px;
@@ -18,7 +23,8 @@
   }
 
   &:hover {
-    background-color: #f7f7f7;;
+    background-color: #f7f7f7;
+    color:inherit;
   }
 
   .price{
