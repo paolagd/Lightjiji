@@ -9,14 +9,15 @@ $(() => {
   // });;
 
   $('.favorite-button').on('click', () => {
-    $.ajax({
-        method: "POST",
-        url: "/api/users"
-      }).done((users) => {
-        for(user of users) {
-          $("<div>").text(user.name).appendTo($("body"));
-        }
-      });;
+    alert('favorite!')
+    // $.ajax({
+    //     method: "GET",
+    //     url: "/api/users"
+    //   }).done((users) => {
+    //     for(user of users) {
+    //       $("<div>").text(user.name).appendTo($("body"));
+    //     }
+    //   });;
   });
 
 });
