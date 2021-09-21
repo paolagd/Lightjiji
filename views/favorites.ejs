@@ -16,7 +16,7 @@
   <link rel="stylesheet" href="/styles/product-listing.css" type="text/css" />
   <link rel="stylesheet" href="/styles/header.css" type="text/css" />
 
-  <title>Buy and Sell</title>
+  <title>Buy and Sell - Favourites</title>
 </head>
 
 <body>
@@ -50,8 +50,7 @@
                   <p>
                     <%= products[product].description %>
                   </p>
-                  <button type="button" class="btn btn-primary">Contact Seller</button>
-                  <button type="button" class="btn btn-warning favorite-button">Favourite</button>
+                  <button type="button" data-index="<%= products[product].id %>" class="btn btn-warning favorite-button">Favourite</button>
                 </div>
               </div>
             </div>

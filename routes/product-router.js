@@ -77,7 +77,7 @@ router.get('/myListings', (req, res) => {
 
 //Get favorites
 
-router.get('/favorites', (req, res) => {
+router.get('/favourites', (req, res) => {
   const userId = req.session.user_id;
 
   if (!userId) {
@@ -100,6 +100,7 @@ router.get('/favorites', (req, res) => {
     });
 
 });
+
 
 // GET /products/:product_id
 router.get("/:product_id", (req, res) => {
@@ -160,6 +161,24 @@ router.delete("/:product_id", (req, res) => {
 });
 
 
+// PUT /products/unfavourite:product_id
+router.put("/:product_id/unfavourite", (req, res) => {
+  const productId = req.params.product_id;
+  const userId = req.session.user_id;
 
+  if (!userId) {
+    res.status(401).send('User not found')
+    return;
+  }
+
+  favouriteQueries.unfavouriteProduct(productId, userId)
+    .then(product => {
+      res.json({ product });
+    })
+    .catch(errorMessage => {
+      res.status(500).json({ error: errorMessage });
+    });
+
+});
 
 module.exports = router;
