@@ -1,0 +1,121 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <!-- Bootstrap CSS -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-F3w7mX95PdgyTmZZMECAngseQB83DfGTowi0iMjiWaeVhAn4FJkqJByhZMI3AhiU" crossorigin="anonymous">
+
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" integrity="sha512-1ycn6IcaQQ40/MKBW2W4Rhis/DbILU74C1vSrLJxCq57o941Ym01SwNsOMqvEBFlcgUa6xLiPY/NS5R+E6ztJQ==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+  <link rel="stylesheet" href="/styles/product-listing.css" type="text/css" />
+  <link rel="stylesheet" href="/styles/header.css" type="text/css" />
+
+  <title>Buy and Sell</title>
+</head>
+
+<body>
+  <!-- header import -->
+  <%- include('partials/_header') %>
+
+    <main class="container product-listing-container">
+      <div class="row">
+        <!-- Sidebar -->
+        <aside class="col-12  col-xl-3">
+          <form id="filters-search-form" method="GET" action="/api/products">
+
+            <!-- Price -->
+            <div class="row mb-4 mt-4">
+              <label class="form-label">Price:</label>
+              <div class="col">
+                <div class="form-outline">
+                  <input type="text" id="min-price" name="minimum_price" class="form-control" />
+                  <label class="form-label" for="min-price">From</label>
+                </div>
+              </div>
+              <div class="col">
+                <div class="form-outline">
+                  <input type="text" id="max-price" name="maximum_price" class="form-control" />
+                  <label class="form-label" for="max-price">To</label>
+                </div>
+              </div>
+            </div>
+
+            <!-- Category-->
+            <div class="form-outline mb-4">
+              <label class="form-label" for="category">Category</label>
+              <select class="form-select" name="category" id="category">
+                <option value="">All</option>
+                <% for(let cat of categories) { %>
+                  <option value="<%= cat.id %>">
+                    <%= cat.name %>
+                  </option>
+                  <% } %>
+              </select>
+            </div>
+
+            <!-- Checkbox -->
+            <div class="form-check mb-4">
+              <input class="form-check-input me-2" type="checkbox" name="is_featured" value="t" />
+              <label class="form-check-label"> Only featured items</label>
+            </div>
+
+            <!-- Submit button -->
+            <button type="submit" class="btn btn-primary btn-block mb-4">Update search</button>
+          </form>
+
+        </aside>
+
+        <!-- Listings -->
+        <section class="col-12 col-xl-9">
+          <div class="row">
+
+            <% if (!products) { %>
+              <h4 class="col-9">No products found </h4>
+            <%} else {%>
+
+                <% for(let product in products) { %>
+                  <div class="row col-12 product">
+                    <div class="col-4 align-self-center">
+                      <img class="align-self-center" src="<%= products[product].image_url %>">
+                    </div>
+                    <div class="row col-8">
+                      <header class="row col-12 mt-3">
+                        <h4 class="col-9">
+                          <%= products[product].name %>
+                        </h4>
+                        <h5 class="col-3 price">$<%= products[product].price / 100 %>
+                        </h5>
+                      </header>
+                      <div class="col-12">
+                        <p>
+                          <%= products[product].description %>
+                        </p>
+                        <button type="button" class="btn btn-primary">Contact Seller</button>
+                        <button type="button" class="btn btn-warning">Favourite</button>
+                      </div>
+                    </div>
+                  </div>
+                <% } %>
+
+            <% } %>
+          </div>
+        </section>
+      </div>
+    </main>
+
+    <script type="text/javascript" src="/vendor/jquery-3.0.0.js"></script>
+    <script type="text/javascript" src="/scripts/app.js"></script>
+    <!-- Bootstrap JS -->
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.3/dist/umd/popper.min.js"
+      integrity="sha384-W8fXfP3gkOKtndU4JGtKDvXbO53Wy8SZCQHczT5FMiiqmQfUpWbYdTil/SxwZgAN"
+      crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/js/bootstrap.min.js"
+      integrity="sha384-skAcpIdS7UcVUC05LJ9Dxay8AXcDYfBJqt1CJ85S/CFujBsIzCIv+l9liuYLaMQ/"
+      crossorigin="anonymous"></script>
+
+</body>
+
+</html>

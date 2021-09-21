@@ -1,0 +1,36 @@
+.product-listing-container{
+  margin-top: 4vh;
+
+  aside{
+    height: 50vh;
+  }
+}
+
+.product{
+  height: 250px;
+  margin-left: 10px;
+  min-width: 280px;
+  cursor: pointer;
+
+  img {
+    width: 90%;
+    max-height: 200px;
+  }
+
+  &:hover {
+    background-color: #f7f7f7;;
+  }
+
+  .price{
+    text-align: end;
+    color: green;
+  }
+}
+
+// Large devices (desktops, 992px and up)
+@media (max-width: 992px) {
+  .product-listing-container{
+    margin-top: 10vh;
+  }
+
+}
