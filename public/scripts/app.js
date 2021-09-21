@@ -8,8 +8,9 @@ $(() => {
   //   }
   // });;
 
-  $('.favorite-button').on('click', () => {
+  $('.favorite-button').on('click', (e) => {
     alert('favorite!')
+    e.preventDefault();
     // $.ajax({
     //     method: "GET",
     //     url: "/api/users"
