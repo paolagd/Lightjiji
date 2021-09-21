@@ -20,20 +20,21 @@
   <main class="container product-listing-container">
     <div class="row">
       <!-- Sidebar -->
-      <aside class="col-12  col-xl-3" style="background-color: rgb(223, 223, 223);">
-        <form method="POST" action="/api/products">
+      <aside class="col-12  col-xl-3" >
+        <form id="filters-search-form" method="POST" action="/api/products">
+
           <!-- Price -->
           <div class="row mb-4 mt-4">
             <label class="form-label" >Price:</label>
             <div class="col">
               <div class="form-outline">
-                <input type="text" id="min-price" class="form-control" />
+                <input type="text" id="min-price" name="min-price" class="form-control" />
                 <label class="form-label" for="min-price">From</label>
               </div>
             </div>
             <div class="col">
               <div class="form-outline">
-                <input type="text" id="max-price" class="form-control" />
+                <input type="text" id="max-price" name="max-price" class="form-control" />
                 <label class="form-label" for="max-price">To</label>
               </div>
             </div>
@@ -42,24 +43,18 @@
           <!-- Category-->
           <div class="form-outline mb-4">
             <label class="form-label" for="category">Category</label>
-            <select class="form-select" id="max-price" aria-label="Default select example">
-              <option selected>Open this select menu</option>
-              <option value="1">One</option>
-              <option value="2">Two</option>
-              <option value="3">Three</option>
+            <select class="form-select" name="category" id="category" >
+              <option value="">All</option>
+              <% for(let cat of categories) { %>
+                <option value="<%= cat.id %>"> <%= cat.name %></option>
+              <% } %>
             </select>
           </div>
 
           <!-- Checkbox -->
           <div class="form-check mb-4">
-            <input
-              class="form-check-input me-2"
-              type="checkbox"
-              value=""
-              id="form6Example8"
-              checked
-            />
-            <label class="form-check-label" for="form6Example8"> Only featured items</label>
+            <input class="form-check-input me-2" type="checkbox" name="is_featured" value="" />
+            <label class="form-check-label"> Only featured items</label>
           </div>
 
           <!-- Submit button -->
@@ -84,7 +79,7 @@
                 <div class="row col-8">
                   <header class="row col-12 mt-3">
                     <h4 class="col-9"><%= products[product].name %></h4>
-                    <h5 class="col-3 price">$<%= products[product].price %></h5>
+                    <h5 class="col-3 price">$<%= products[product].price / 100 %></h5>
                   </header>
                   <div class="col-12">
                     <p><%= products[product].description %></p>
