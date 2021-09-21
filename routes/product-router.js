@@ -4,7 +4,6 @@ const productQueries = require('../lib/products');
 const categoryQueries = require('../lib/categories');
 const timeago = require('timeago.js');
 
-
 //GET /api/products
 
 router.get('/', (req, res) => {
@@ -16,9 +15,9 @@ router.get('/', (req, res) => {
   Promise.all([productsPromise, categories])
     .then(result => {
       const templateVars = {
-        products : result[0],
-        categories : result[1],
-        user : userId
+        products: result[0],
+        categories: result[1],
+        user: userId
       };
 
       res.render('product-listings', templateVars);
@@ -34,7 +33,7 @@ router.get('/', (req, res) => {
 router.post('/', (req, res) => {
   const userId = req.session.user_id;
   if (!userId) {
-    res.error("The user doesn't exist;");
+    res.status(401).send('User not found')
     return;
   }
 
@@ -43,17 +42,45 @@ router.post('/', (req, res) => {
     .catch(errorMessage => res.status(500).json({ error: errorMessage }));
 });
 
+
+//Get favorites
+
+router.get('/favorites', (req, res) => {
+  const userId = req.session.user_id;
+
+  if (!userId) {
+    res.status(401).send('User not found')
+    return;
+  }
+
+  const filters = {
+    seller_id: userId,
+    id_featured: true
+  }
+
+  productQueries.getProductsSatisfying(filters)
+    .then(products => {
+      const templateVars = {
+        user: userId,
+        products,
+        timeago
+      }
+
+      res.render('favorites', templateVars);
+    })
+    .catch(errorMessage => {
+      res.status(500).json({ error: errorMessage });
+    });
+
+});
+
 // GET /products/:product_id
 router.get("/:product_id", (req, res) => {
   const userId = req.session.userId;
-  // if (!userId) {
-  //   res.error("The user doesn't exist;");
-  //   return;
-  // }
 
   productQueries.getProductById(req.params.product_id)
     .then(product => {
-      const templateVars = {user: userId, product, timeago}
+      const templateVars = { user: userId, product, timeago }
       res.render('review-products', templateVars);
     })
     .catch(errorMessage => {
@@ -104,6 +131,8 @@ router.delete("/:product_id", (req, res) => {
     });
 
 });
+
+
 
 
 module.exports = router;
