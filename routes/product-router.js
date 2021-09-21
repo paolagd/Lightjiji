@@ -65,7 +65,7 @@ router.get('/myListings', (req, res) => {
         timeago
       }
 
-    // modify line with ejs res.render('my-listings', templateVars);
+      res.render('listings', templateVars);
     })
     .catch(errorMessage => {
       res.status(500).json({ error: errorMessage });
