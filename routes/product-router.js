@@ -43,6 +43,36 @@ router.post('/', (req, res) => {
 });
 
 
+//Get My Listings
+
+router.get('/myListings', (req, res) => {
+  const userId = req.session.user_id;
+
+  if (!userId) {
+    res.status(401).send('User not found')
+    return;
+  }
+
+  const filters = {
+    seller_id: userId
+  }
+
+  productQueries.getProductsSatisfying(filters)
+    .then(products => {
+      const templateVars = {
+        user: userId,
+        products,
+        timeago
+      }
+
+    // modify line with ejs res.render('my-listings', templateVars);
+    })
+    .catch(errorMessage => {
+      res.status(500).json({ error: errorMessage });
+    });
+
+});
+
 //Get favorites
 
 router.get('/favorites', (req, res) => {
@@ -54,8 +84,7 @@ router.get('/favorites', (req, res) => {
   }
 
   const filters = {
-    seller_id: userId,
-    id_featured: true
+    seller_id: userId
   }
 
   productQueries.getProductsSatisfying(filters)
