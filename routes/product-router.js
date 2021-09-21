@@ -43,7 +43,7 @@ router.post('/', (req, res) => {
 });
 
 
-//Get favorites
+//Get My Listings
 
 router.get('/myListings', (req, res) => {
   const userId = req.session.user_id;
