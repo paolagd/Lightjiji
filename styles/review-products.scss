@@ -1,0 +1,36 @@
+.container{
+  margin-top: 10vh;
+
+  .product-info{
+    margin-right: 10vh;
+
+    img{
+      margin:5vh 0;
+      width: 100%;
+    }
+  }
+
+  .contact-seller{
+    background-color: #F9F9F9;
+
+    h3{
+      text-align: center;
+      margin-bottom: 5vh;
+    }
+    form{
+      margin: 15vh 0 0 0;
+      padding: 5vh 3vh 5vh 3vh;
+      background-color: rgb(235, 235, 235);
+      width: 100%;
+    }
+
+    button{
+      margin: 10vh 0;
+    }
+  }
+}
+
+
+
+
+
