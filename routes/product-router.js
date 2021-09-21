@@ -4,7 +4,6 @@ const productQueries = require('../lib/products');
 const categoryQueries = require('../lib/categories');
 const timeago = require('timeago.js');
 
-
 //GET /api/products
 
 router.get('/', (req, res) => {
