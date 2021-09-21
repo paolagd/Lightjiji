@@ -21,20 +21,20 @@
     <div class="row">
       <!-- Sidebar -->
       <aside class="col-12  col-xl-3" >
-        <form id="filters-search-form" method="POST" action="/api/products">
+        <form id="filters-search-form" method="GET" action="/api/products">
 
           <!-- Price -->
           <div class="row mb-4 mt-4">
             <label class="form-label" >Price:</label>
             <div class="col">
               <div class="form-outline">
-                <input type="text" id="min-price" name="min-price" class="form-control" />
+                <input type="text" id="min-price" name="minimum_price" class="form-control" />
                 <label class="form-label" for="min-price">From</label>
               </div>
             </div>
             <div class="col">
               <div class="form-outline">
-                <input type="text" id="max-price" name="max-price" class="form-control" />
+                <input type="text" id="max-price" name="maximum_price" class="form-control" />
                 <label class="form-label" for="max-price">To</label>
               </div>
             </div>
@@ -53,7 +53,7 @@
 
           <!-- Checkbox -->
           <div class="form-check mb-4">
-            <input class="form-check-input me-2" type="checkbox" name="is_featured" value="" />
+            <input class="form-check-input me-2" type="checkbox" name="is_featured" value="t" />
             <label class="form-check-label"> Only featured items</label>
           </div>
 
