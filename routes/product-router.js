@@ -6,6 +6,7 @@ const categoryQueries = require('../lib/categories');
 //GET /api/products
 
 router.get('/', (req, res) => {
+  const userId = req.session.user_id;
 
   let productsPromise = productQueries.getProductsSatisfying(req.query);
   let categories = categoryQueries.getAllCategories();
@@ -14,7 +15,8 @@ router.get('/', (req, res) => {
     .then(result => {
       const templateVars = {
         products : result[0],
-        categories : result[1]
+        categories : result[1],
+        user : userId
       };
 
       res.render('product-listings', templateVars);
