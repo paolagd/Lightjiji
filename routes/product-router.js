@@ -2,7 +2,9 @@ const express = require('express');
 const router = express.Router();
 const productQueries = require('../lib/products');
 const categoryQueries = require('../lib/categories');
+const favouriteQueries = require('../lib/favourites');
 const timeago = require('timeago.js');
+const { user } = require('pg/lib/defaults');
 
 //GET /api/products
 
@@ -83,11 +85,7 @@ router.get('/favorites', (req, res) => {
     return;
   }
 
-  const filters = {
-    seller_id: userId
-  }
-
-  productQueries.getProductsSatisfying(filters)
+  favouriteQueries.getUserFavourites(userId)
     .then(products => {
       const templateVars = {
         user: userId,
