@@ -6,8 +6,15 @@ const productQueries = require('../lib/products');
 
 router.get('/', (req, res) => {
   productQueries.getProductsSatisfying(req.query)
-    .then(products => res.json({ products }))
-    .catch(errorMessage => res.status(500).json({ error: errorMessage }));
+    .then(products => {
+      const templateVars = {
+        products
+      };
+      res.render('product-listings', templateVars);
+    })
+    .catch(errorMessage => {
+      res.status(500).json({ error: errorMessage });
+    });
 });
 
 //POST /api/products

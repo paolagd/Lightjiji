@@ -56,3 +56,6 @@ app.get("/", (req, res) => {
 app.listen(PORT, () => {
   console.log(`Example app listening on port ${PORT}`);
 });
+
+console.log('srcPath is ' + __dirname + "/styles");
+console.log('destPath is ' + __dirname + "/public/styles");
