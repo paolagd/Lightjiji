@@ -1,6 +1,7 @@
 const express = require('express');
 const router = express.Router();
 const productQueries = require('../lib/products');
+const categoryQueries = require('../lib/categories');
 const timeago = require('timeago.js');
 
 
