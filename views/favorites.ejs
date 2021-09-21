@@ -1,0 +1,74 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <!-- Bootstrap CSS -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-F3w7mX95PdgyTmZZMECAngseQB83DfGTowi0iMjiWaeVhAn4FJkqJByhZMI3AhiU" crossorigin="anonymous">
+
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css"
+    integrity="sha512-1ycn6IcaQQ40/MKBW2W4Rhis/DbILU74C1vSrLJxCq57o941Ym01SwNsOMqvEBFlcgUa6xLiPY/NS5R+E6ztJQ=="
+    crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+  <link rel="stylesheet" href="/styles/product-listing.css" type="text/css" />
+  <link rel="stylesheet" href="/styles/header.css" type="text/css" />
+
+  <title>Buy and Sell</title>
+</head>
+
+<body>
+  <!-- header import -->
+  <%- include('partials/_header') %>
+
+    <main class="container product-listing-container  ">
+
+      <div class="row justify-content-center">
+
+        <% if (!products) { %>
+          <div class="alert alert-danger" role="alert">
+            You have not marked any products as favourite yet!
+          </div>
+        <%} else {%>
+
+          <% for(let product in products) { %>
+            <div class="row col-md-9 product">
+              <div class="col-4 align-self-center">
+                <img class="align-self-center" src="<%= products[product].image_url %>">
+              </div>
+              <div class="row col-8">
+                <header class="row col-12 mt-3">
+                  <h4 class="col-9">
+                    <%= products[product].name %>
+                  </h4>
+                  <h5 class="col-3 price">$<%= products[product].price / 100 %>
+                  </h5>
+                </header>
+                <div class="col-12">
+                  <p>
+                    <%= products[product].description %>
+                  </p>
+                  <button type="button" class="btn btn-primary">Contact Seller</button>
+                  <button type="button" class="btn btn-warning favorite-button">Favourite</button>
+                </div>
+              </div>
+            </div>
+            <% } %>
+
+        <% } %>
+      </div>
+
+    </main>
+
+    <script type="text/javascript" src="/vendor/jquery-3.0.0.js"></script>
+    <script type="text/javascript" src="/scripts/app.js"></script>
+    <!-- Bootstrap JS -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/js/bootstrap.min.js"
+      integrity="sha384-skAcpIdS7UcVUC05LJ9Dxay8AXcDYfBJqt1CJ85S/CFujBsIzCIv+l9liuYLaMQ/"
+      crossorigin="anonymous"></script>
+
+</body>
+
+</html>
