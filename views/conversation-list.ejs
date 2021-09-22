@@ -29,7 +29,7 @@
 
   <body>
     <%- include("partials/_header", {user: locals.user}); %>
-    <main class="container mt-4">
+    <main class="container mt-4 mb-4">
       <section class="conversation-list">
         <% for (const {other_id, other, author, time_sent, content } of locals.conversations) { %>
         <article class="conversation">
