@@ -71,32 +71,36 @@ $(document).ready(() => {
     );
   };
 
+  const scrollToBottomOfMessages = () => {
+    const messageList = $(".message-list");
+    messageList.scrollTop(messageList.prop("scrollHeight"));
+  };
+
   const otherUserID = getOtherUserID();
   getMessagesWithUser(otherUserID)
     .then(messages_ => Promise.all(messages_.map(populateMessageAuthor)))
     .then(messages_ => {
       messages = messages_;
       rerenderMessages();
+      scrollToBottomOfMessages();
     });
 
   $("#send-message-form").on("submit", function (event) {
-    console.log("form");
     event.preventDefault();
     const messageContent = $(this.elements["message-content"]).val();
     const otherUserID = getOtherUserID();
-    console.log("having convo with", otherUserID);
 
     sendMessageToUser(otherUserID, messageContent)
       .then(populateMessageAuthor)
       .then(newMessage => {
         messages.push(newMessage);
         rerenderMessages();
+        scrollToBottomOfMessages();
       })
       .catch(error => {
         console.log(error);
       });
 
-    console.log(`Sending '${messageContent}' to user!`);
     return false;
   });
 });

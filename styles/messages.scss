@@ -3,7 +3,8 @@
 }
 
 .message-list {
-  padding: 32px;
+  max-height: 80vh;
+  overflow-y: scroll;
 }
 
 .message-list .message {

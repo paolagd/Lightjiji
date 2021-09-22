@@ -19,12 +19,12 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300;0,400;1,300;1,400&display=swap" rel="stylesheet">
 
-  <title>Buy and Sell</title>
+  <title>Searching for '<%= locals.searchTerm %>'</title>
 </head>
 
 <body>
   <!-- header import -->
-  <%- include('partials/_header') %>
+  <%- include('partials/_header', { searchTerm: locals.searchTerm }) %>
 
     <main class="container product-listing-container">
       <div class="row">

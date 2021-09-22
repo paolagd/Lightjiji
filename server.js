@@ -9,8 +9,12 @@ const bodyParser = require("body-parser");
 const sass       = require("node-sass-middleware");
 const app        = express();
 const morgan     = require('morgan');
-const { getAllUserConversations } = require("./lib/messages");
+const {
+  getAllUserConversations,
+  sendMessage
+} = require("./lib/messages");
 const { getUserById } = require('./lib/users');
+const { requireLogin } = require("./routes/routeHelper");
 const moment = require('moment');
 var cookieSession = require('cookie-session');
 
@@ -34,6 +38,20 @@ app.use("/styles", sass({
 }));
 app.use(express.static("public"));
 
+// automatically add a user object to the request
+app.use((req, res, next) => {
+  const userId = req.session ? req.session.user_id : null;
+
+  getUserById(userId)
+    .then(user => {
+      req.user = user;
+    }).catch(() => {
+      req.user = null;
+    }).finally(() => {
+      next();
+    });
+});
+
 // Separated Routes for each Resource
 // Note: Feel free to replace the example routes below with your own
 const usersRoutes   = require("./routes/user-router");
@@ -52,23 +70,21 @@ app.use("/api/messages", messageRoutes);
 // Home page
 // Warning: avoid creating more routes in this file!
 // Separate them into separate routes files (see above).
+
 app.get("/", (req, res) => {
   res.redirect("/api/products");
 });
 
-app.get("/messages", (req, res) => {
-  const user = {
-    id: 3,
-    first_name: "Jayrese",
-    last_name: "H",
-    phone_number: "6472325522",
-    email: "jay@gmail.com"
-  };
+app.get("/logout", (req, res) => {
+  req.session = null;
+  res.redirect("/");
+});
 
-  getAllUserConversations(user.id)
+app.get("/messages", requireLogin);
+app.get("/messages", (req, res) => {
+  getAllUserConversations(req.user.id)
     .then(conversations => Promise.all(conversations.map(convo => {
       const { other_id, author_id } = convo;
-      console.log('Other ID:', other_id, 'Author ID:', author_id, convo);
       return Promise
         .all([getUserById(other_id), getUserById(author_id)])
         .then(([other, author]) => ({
@@ -78,23 +94,37 @@ app.get("/messages", (req, res) => {
           time_sent: moment(convo.time_sent).fromNow()
         }));
     }))).then(conversations => {
-      console.log(conversations);
-      res.render("conversation-list", { user, conversations });
+      res.render("conversation-list", { user: req.user, conversations });
     })
     .catch(errorMessage => {
-      res.status(500).render({ error: errorMessage });
+      res.status(500).json({ error: errorMessage });
     })
 });
 
+app.get("/messages/:other_id", requireLogin);
 app.get("/messages/:other_id", (req, res) => {
-  const user = {
-    first_name: "Jayrese",
-    last_name: "H",
-    phone_number: "6472325522",
-    email: "jay@gmail.com"
-  };
+  const otherUserID = req.params.other_id;
 
-  res.render("conversation", { user });
+  getUserById(otherUserID)
+    .then(otherUser => {
+      if (!otherUser) {
+        res.status(401).send('User not found');
+        return;
+      }
+
+      res.render("conversation", { user: req.user, other: otherUser });
+    });
+});
+
+app.post("/messages/:other_id", (req, res) => {
+  const fromUserId = req.session.user_id;
+  const toUserId = req.params.other_id;
+  const messageContent = req.body.message;
+
+  sendMessage(fromUserId, toUserId, messageContent)
+    .then(() => {
+      res.redirect(`/messages/${toUserId}`);
+    });
 });
 
 app.listen(PORT, () => {

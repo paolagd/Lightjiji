@@ -26,11 +26,12 @@
         </div>
         <div class="col-xl-4 contact-seller">
           <h5>Posted <%= timeago.format(product.created_on) %></h5>
-          <form action="/api/messages" method="POST">
+          <form action="/messages/<%= product.seller_id %>" method="POST">
             <h3>Contact Seller</h3>
-            <textarea class="form-control" rows="5"></textarea>
+            <h6>Your Message:</h6>
+            <textarea class="form-control" rows="5" placeholder="Hi, I'm interested! Please contact me if this is still available." name="message"></textarea>
             <div class="d-grid gap-2 col-6 mx-auto">
-            <button type="button" class="btn btn-primary mx-auto">Send Message</button>
+            <input type="submit" class="btn btn-primary mx-auto" value="Send Message"/>
           </div>
         </form>
         </div>
