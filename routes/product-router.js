@@ -109,7 +109,7 @@ router.get('/favourites', (req, res) => {
 
 // GET /products/:product_id
 router.get("/:product_id", (req, res) => {
-  const userId = req.session.userId;
+  const userId = req.session.user_id;
 
   productQueries.getProductById(req.params.product_id)
     .then(product => {
