@@ -4,7 +4,7 @@ const productQueries = require('../lib/products');
 const categoryQueries = require('../lib/categories');
 const favouriteQueries = require('../lib/favourites');
 const timeago = require('timeago.js');
-const { user } = require('pg/lib/defaults');
+const { requireLogin } = require('./routeHelper');
 
 //GET /api/products
 
@@ -48,14 +48,9 @@ router.post('/', (req, res) => {
 
 
 //Get My Listings
-
+router.get('/myListings', requireLogin);
 router.get('/myListings', (req, res) => {
   const userId = req.session.user_id;
-
-  if (!userId) {
-    res.status(401).send('User not found')
-    return;
-  }
 
   const filters = {
     seller_id: userId
@@ -82,7 +77,7 @@ router.get('/myListings', (req, res) => {
 });
 
 //Get favorites
-
+router.get('/favourites', requireLogin);
 router.get('/favourites', (req, res) => {
   const userId = req.session.user_id;
 

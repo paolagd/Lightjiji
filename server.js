@@ -9,8 +9,12 @@ const bodyParser = require("body-parser");
 const sass       = require("node-sass-middleware");
 const app        = express();
 const morgan     = require('morgan');
-const { getAllUserConversations } = require("./lib/messages");
+const {
+  getAllUserConversations,
+  sendMessage
+} = require("./lib/messages");
 const { getUserById } = require('./lib/users');
+const { requireLogin } = require("./routes/routeHelper");
 const moment = require('moment');
 var cookieSession = require('cookie-session');
 
@@ -76,6 +80,7 @@ app.get("/logout", (req, res) => {
   res.redirect("/");
 });
 
+app.get("/messages", requireLogin);
 app.get("/messages", (req, res) => {
   getAllUserConversations(req.user.id)
     .then(conversations => Promise.all(conversations.map(convo => {
@@ -96,8 +101,30 @@ app.get("/messages", (req, res) => {
     })
 });
 
+app.get("/messages/:other_id", requireLogin);
 app.get("/messages/:other_id", (req, res) => {
-  res.render("conversation", { user: req.user });
+  const otherUserID = req.params.other_id;
+
+  getUserById(otherUserID)
+    .then(otherUser => {
+      if (!otherUser) {
+        res.status(401).send('User not found');
+        return;
+      }
+
+      res.render("conversation", { user: req.user, other: otherUser });
+    });
+});
+
+app.post("/messages/:other_id", (req, res) => {
+  const fromUserId = req.session.user_id;
+  const toUserId = req.params.other_id;
+  const messageContent = req.body.message;
+
+  sendMessage(fromUserId, toUserId, messageContent)
+    .then(() => {
+      res.redirect(`/messages/${toUserId}`);
+    });
 });
 
 app.listen(PORT, () => {
