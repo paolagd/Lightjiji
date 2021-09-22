@@ -30,6 +30,12 @@
   <body>
     <%- include("partials/_header", {user: locals.user}); %>
     <main class="container mt-4 mb-4">
+      <% if (locals.conversations.length === 0) { %>
+        <div class="alert alert-danger" role="alert">
+          You have not started any conversations yet!
+        </div>
+      <%}%>
+
       <section class="conversation-list">
         <% for (const {other_id, other, author, time_sent, content } of locals.conversations) { %>
         <a href="/messages/<%= other_id %>" class="conversation">
