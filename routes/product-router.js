@@ -10,7 +10,10 @@ const { requireLogin } = require('./routeHelper');
 
 router.get('/', (req, res) => {
   const userId = req.session.user_id;
+  const searchTerm = req.query.q || null;
+
   req.query.userId = userId;
+  req.query.searchTerm = searchTerm;
 
   let productsPromise = productQueries.getProductsSatisfying(req.query);
   let categories = categoryQueries.getAllCategories();
@@ -18,6 +21,7 @@ router.get('/', (req, res) => {
   Promise.all([productsPromise, categories])
     .then(result => {
       const templateVars = {
+        searchTerm,
         products: result[0],
         categories: result[1],
         user: userId
@@ -105,7 +109,7 @@ router.get('/favourites', (req, res) => {
 
 // GET /products/:product_id
 router.get("/:product_id", (req, res) => {
-  const userId = req.session.userId;
+  const userId = req.session.user_id;
 
   productQueries.getProductById(req.params.product_id)
     .then(product => {
