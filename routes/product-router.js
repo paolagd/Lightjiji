@@ -38,9 +38,12 @@ router.post('/', (req, res) => {
     res.status(401).send('User not found')
     return;
   }
-
+  console.log(req.body);
   productQueries.createProductListing({ ...req.body, seller_id: userId })
-    .then(product => res.json({ product }))
+    .then(product => {
+      res.redirect("/api/products/myListings");
+    })
+
     .catch(errorMessage => res.status(500).json({ error: errorMessage }));
 });
 
@@ -59,11 +62,15 @@ router.get('/myListings', (req, res) => {
     seller_id: userId
   }
 
-  productQueries.getProductsSatisfying(filters)
-    .then(products => {
+  let productsPromise = productQueries.getProductsSatisfying(filters);
+  let categories = categoryQueries.getAllCategories();
+
+  Promise.all([productsPromise, categories])
+    .then(result => {
       const templateVars = {
         user: userId,
-        products,
+        products: result[0],
+        categories: result[1],
         timeago
       }
 
@@ -132,7 +139,7 @@ router.put("/:product_id", (req, res) => {
 
 });
 
-// PUT /products/:product_id
+// PUT /products/:product_id/sold
 router.put("/:product_id/sold", (req, res) => {
   const productId = req.params.product_id;
 
