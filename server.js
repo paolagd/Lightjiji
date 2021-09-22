@@ -11,6 +11,7 @@ const app        = express();
 const morgan     = require('morgan');
 const { getAllUserConversations } = require("./lib/messages");
 const { getUserById } = require('./lib/users');
+const { requireLogin } = require("./routes/routeHelper");
 const moment = require('moment');
 var cookieSession = require('cookie-session');
 
@@ -76,6 +77,7 @@ app.get("/logout", (req, res) => {
   res.redirect("/");
 });
 
+app.get("/messages", requireLogin);
 app.get("/messages", (req, res) => {
   getAllUserConversations(req.user.id)
     .then(conversations => Promise.all(conversations.map(convo => {
@@ -96,6 +98,7 @@ app.get("/messages", (req, res) => {
     })
 });
 
+app.get("/messages/:other_id", requireLogin);
 app.get("/messages/:other_id", (req, res) => {
   res.render("conversation", { user: req.user });
 });
