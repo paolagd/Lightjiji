@@ -33,17 +33,20 @@
 
   <body>
     <%- include("partials/_header", {user: locals.user}); %>
-    <a href="/messages">Back to List</a>
 
-    <section class="message-list"></section>
+    <main class="container mt-4">
+      <a href="/messages">Back to List</a>
 
-    <form id="send-message-form">
-      <div class="input-group mt-3">
-        <input type="text" name="message-content" class="form-control" placeholder="Message user" />
-        <div class="input-group-append">
-          <input class="btn btn-success" type="submit" value="Send Message!" />
+      <section class="message-list"></section>
+
+      <form id="send-message-form">
+        <div class="input-group mt-3">
+          <input type="text" name="message-content" class="form-control" placeholder="Message user" />
+          <div class="input-group-append">
+            <input class="btn btn-success" type="submit" value="Send Message!" />
+          </div>
         </div>
-      </div>
-    </form>
+      </form>
+    </main>
   </body>
 </html>

@@ -29,22 +29,24 @@
 
   <body>
     <%- include("partials/_header", {user: locals.user}); %>
-    <section class="conversation-list">
-      <% for (const {other_id, other, author, time_sent, content } of locals.conversations) { %>
-      <article class="conversation">
-        <img class="conversation--profile-pic" src="https://pbs.twimg.com/profile_images/573692360263004161/gOvizBEP_400x400.jpeg">
-        <div>
-          <div class="conversation--name-date">
-            <a class="conversation--other-name" href="/messages/<%= other_id %>">
-              <%= `${other.first_name} ${other.last_name}` %>
-            </a>
-            <span><%= time_sent %></span>
+    <main class="container mt-4">
+      <section class="conversation-list">
+        <% for (const {other_id, other, author, time_sent, content } of locals.conversations) { %>
+        <article class="conversation">
+          <img class="conversation--profile-pic" src="https://pbs.twimg.com/profile_images/573692360263004161/gOvizBEP_400x400.jpeg">
+          <div>
+            <div class="conversation--name-date">
+              <a class="conversation--other-name" href="/messages/<%= other_id %>">
+                <%= `${other.first_name} ${other.last_name}` %>
+              </a>
+              <span><%= time_sent %></span>
+            </div>
+            <span class="conversation--author-name"><%= `${other.first_name} ${other.last_name}` %></span>
+            <p><%= content %></p>
           </div>
-          <span class="conversation--author-name"><%= `${other.first_name} ${other.last_name}` %></span>
-          <p><%= content %></p>
-        </div>
-      </article>
-      <% } %>
-    </section>
+        </article>
+        <% } %>
+      </section>
+    </main>
   </body>
 </html>
