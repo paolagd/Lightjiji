@@ -11,6 +11,10 @@
 
   border: 1px solid grey;
   border-radius: .5em;
+
+  color: black;
+
+  text-decoration: none;
 }
 
 .conversation-list > .conversation:first-of-type {
@@ -19,6 +23,11 @@
 
 .conversation-list > .conversation:last-of-type {
   margin-bottom: 0;
+}
+
+.conversation:hover {
+  background-color: #f7f7f7;
+  color: #0A58CA;
 }
 
 .conversation--name-content {

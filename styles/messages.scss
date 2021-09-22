@@ -2,6 +2,11 @@
   box-sizing: border-box;
 }
 
+.message-list {
+  max-height: 80vh;
+  overflow-y: scroll;
+}
+
 .message-list .message {
   height: 8em;
   display: flex;
