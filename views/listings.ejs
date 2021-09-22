@@ -24,47 +24,45 @@
       <div class="row">
         <!-- Sidebar -->
         <aside class="col-12  col-xl-3">
-          <form class="row g-3">
+          <form class="row g-3" add-listing action="/api/products" method="POST" >
             <h5>Create New Listing</h5>
             <div class="col-md-12">
               <label for="title" class="form-label">Add Title</label>
-              <input type="email" class="form-control" id="title">
+              <input type="text" class="form-control" id="title" name="name">
             </div>
             <div class="col-md-6">
               <label for="category" class="form-label">Select category</label>
-              <select id="category" class="form-select">
-                <option selected>Electronics</option>
-                <option>Home</option>
-                <option>Books</option>
-                <option>Computers</option>
-                <option>Health</option>
-                <option>Toys & Games</option>
-                <option>Clothing</option>
-                <option>Cars</option>
+              <select id="category" class="form-select" name="category_id">
+                <option value="">Select</option>
+                <% for(let cat of categories) { %>
+                  <option value="<%= cat.id %>">
+                    <%= cat.name %>
+                  </option>
+                  <% } %>
               </select>
             </div>
             <div class="col-md-6">
               <label for="inputPrice" class="form-label">Price</label>
-              <input type="text" class="form-control" id="inputPrice">
+              <input type="text" class="form-control" id="inputPrice" name="price">
             </div>
             <div class="col-12">
               <label for="description" class="form-label">Add Description</label>
-              <textarea class="form-control" id="description" rows="3"></textarea>
+              <textarea class="form-control" id="description" rows="3" name="description"></textarea>
             </div>
             <div class="col-md-12">
               <label for="image" class="form-label">Image</label>
-              <input type="email" class="form-control" id="image">
+              <input type="text" class="form-control" id="image" name="image_url">
             </div>
             <div class="col-12">
               <div class="form-check">
-                <input class="form-check-input" type="checkbox" id="gridCheck">
+                <input class="form-check-input" type="checkbox" id="gridCheck" name="is_featured" value="true">
                 <label class="form-check-label" for="gridCheck">
                   Feature your product?
                 </label>
               </div>
             </div>
             <div class="col-12">
-              <button type="submit" class="btn btn-primary">Post Ad</button>
+              <button type="submit" class="btn btn-primary post-ad">Post Ad</button>
             </div>
           </form>
 
@@ -95,12 +93,78 @@
                         <p>
                           <%= products[product].description %>
                         </p>
-                        <button type="button" class="btn btn-success sold-button">Sold</button>
-                        <button type="button" class="btn btn-primary edit-button">Edit</button>
-                        <button type="button" class="btn btn-dark delete-button">Delete</button>
+                        <% if(products[product].is_sold !== true) { %>
+                        <button type="button" data-index="<%= products[product].id %>" class="btn btn-success sold-button">Sold</button>
+
+                        <button type="button" data-name="<%= products[product].name %>"
+                          data-description="<%= products[product].description%>"
+                          data-price="<%= products[product].price /100 %>"
+                          data-category_id="<%= products[product].category_id %>"
+                          data-featured="<%= products[product].is_featured %>"
+                          data-image_url="<%= products[product].image_url %>"
+                          class="btn btn-primary edit-button" data-bs-toggle="modal" data-bs-target="#edit-form">Edit</button>
+                        <button type="button" data-index="<%= products[product].id %>" class="btn btn-dark delete-button">Delete</button>
+                        <% } else { %>
+                          <h4 class="sold">SOLD</h4>
+                          <%} %>
+
                       </div>
                     </div>
                   </div>
+
+                  <!-- Modal -->
+<div class="modal fade" id="edit-form" tabindex="-1" aria-labelledby="ModalLabel" aria-hidden="true">
+  <div class="modal-dialog modal-xl">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="ModalLabel">Edit Ad</h5>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body">
+        <form class="row g-3 changed-form">
+          <div class="col-md-12">
+            <label class="form-label">Title</label>
+            <input type="text" class="form-control" id="edit-title" name="name">
+          </div>
+          <div class="col-md-6">
+            <label class="form-label">Select category</label>
+            <select id="edit-category" class="form-select" name="category">
+                <% for(let cat of categories) { %>
+                  <option value="<%= cat.id %>">
+                    <%= cat.name %>
+                  </option>
+                  <% } %>
+            </select>
+          </div>
+          <div class="col-md-6">
+            <label class="form-label">Price</label>
+            <input type="text" class="form-control" id="edit-price" name="price">
+          </div>
+          <div class="col-12">
+            <label class="form-label">Description</label>
+            <textarea class="form-control" id="edit-description" rows="3" name="description"></textarea>
+          </div>
+          <div class="col-md-12">
+            <label class="form-label">Image</label>
+            <input type="text" class="form-control" id="edit-image" name="image_url">
+          </div>
+          <div class="col-12">
+            <div class="form-check">
+              <input class="form-check-input" type="checkbox" id="edit-Check" name="is_featured">
+              <label class="form-check-label">
+                Feature your product?
+              </label>
+            </div>
+          </div>
+          <div class="col-12">
+            <button type="submit" data-id="<%= products[product].id %>" class="btn btn-primary save-changes">Save Changes</button>
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
+</div>
+
                 <% } %>
             <% } %>
           </div>
@@ -109,7 +173,9 @@
     </main>
 
     <script type="text/javascript" src="/vendor/jquery-3.0.0.js"></script>
-    <script type="text/javascript" src="/scripts/app.js"></script>
+    <script type="text/javascript" src="/scripts/update-product.js"></script>
+    <script type="text/javascript" src="/scripts/sold-product.js"></script>
+    <script type="text/javascript" src="/scripts/delete-product.js"></script>
     <!-- Bootstrap JS -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/js/bootstrap.min.js"
       integrity="sha384-skAcpIdS7UcVUC05LJ9Dxay8AXcDYfBJqt1CJ85S/CFujBsIzCIv+l9liuYLaMQ/"
