@@ -27,7 +27,7 @@
 
       <div class="row justify-content-center">
 
-        <% if (!products) { %>
+        <% if (!products.length) { %>
           <div class="alert alert-danger" role="alert">
             You have not marked any products as favourite yet!
           </div>
@@ -54,7 +54,7 @@
                 </div>
               </div>
             </div>
-            <% } %>
+          <% } %>
 
         <% } %>
       </div>
