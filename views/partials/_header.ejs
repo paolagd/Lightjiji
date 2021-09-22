@@ -19,10 +19,12 @@
           <a class="nav-item nav-link" href="/login">Login</a>
           <a class="nav-item nav-link" href="/register">Register</a>
           <%} else { %>
+
         <a class="nav-item nav-link" href="/api/products/myListings">Listings</a>
-        <a class="nav-item nav-link" href="/api/favorites"><i class="fas fa-heart"></i></a>
-        <a class="nav-item nav-link" href="/api/messages"><i class="far fa-envelope"></i></a>
-        <form class="form-inline" method="POST" action="/logout">
+        <a class="nav-item nav-link" href="/api/products/favourites"><i class="fas fa-heart"></i></a>
+        <a class="nav-item nav-link" href="/messages"><i class="far fa-envelope"></i></a>
+        <form class="form-inline" method="GET" action="/logout">
+
           <button type="submit" class="btn btn-outline-dark">Logout</button>
         </form>
         <% } %>

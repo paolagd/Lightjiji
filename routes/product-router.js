@@ -10,6 +10,7 @@ const { user } = require('pg/lib/defaults');
 
 router.get('/', (req, res) => {
   const userId = req.session.user_id;
+  req.query.userId = userId;
 
   let productsPromise = productQueries.getProductsSatisfying(req.query);
   let categories = categoryQueries.getAllCategories();
@@ -21,11 +22,9 @@ router.get('/', (req, res) => {
         categories: result[1],
         user: userId
       };
-
       res.render('product-listings', templateVars);
     })
     .catch(errorMessage => {
-      console.log(errorMessage)
       res.status(500).json({ error: errorMessage });
     });
 });
@@ -172,6 +171,27 @@ router.put("/:product_id/unfavourite", (req, res) => {
   }
 
   favouriteQueries.unfavouriteProduct(productId, userId)
+    .then(product => {
+      res.json({ product });
+    })
+    .catch(errorMessage => {
+      res.status(500).json({ error: errorMessage });
+    });
+
+});
+
+
+// PUT /products/favourite:product_id
+router.put("/:product_id/favourite", (req, res) => {
+  const productId = req.params.product_id;
+  const userId = req.session.user_id;
+
+  if (!userId) {
+    res.status(401).send('User not found')
+    return;
+  }
+
+  favouriteQueries.favouriteProduct(productId, userId)
     .then(product => {
       res.json({ product });
     })

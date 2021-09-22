@@ -27,7 +27,7 @@
 
       <div class="row justify-content-center">
 
-        <% if (!products) { %>
+        <% if (!products.length) { %>
           <div class="alert alert-danger" role="alert">
             You have not marked any products as favourite yet!
           </div>
@@ -50,11 +50,11 @@
                   <p>
                     <%= products[product].description %>
                   </p>
-                  <button type="button" data-index="<%= products[product].id %>" class="btn btn-warning favorite-button">Favourite</button>
+                  <button type="button" data-index="<%= products[product].id %>" class="btn btn-danger unfavorite-button-favs">unFavourite</button>
                 </div>
               </div>
             </div>
-            <% } %>
+          <% } %>
 
         <% } %>
       </div>

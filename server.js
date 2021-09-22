@@ -9,6 +9,9 @@ const bodyParser = require("body-parser");
 const sass       = require("node-sass-middleware");
 const app        = express();
 const morgan     = require('morgan');
+const { getAllUserConversations } = require("./lib/messages");
+const { getUserById } = require('./lib/users');
+const moment = require('moment');
 var cookieSession = require('cookie-session');
 
 // Load the logger first so all (static) HTTP requests are logged to STDOUT
@@ -31,6 +34,20 @@ app.use("/styles", sass({
 }));
 app.use(express.static("public"));
 
+// automatically add a user object to the request
+app.use((req, res, next) => {
+  const userId = req.session ? req.session.user_id : null;
+
+  getUserById(userId)
+    .then(user => {
+      req.user = user;
+    }).catch(() => {
+      req.user = null;
+    }).finally(() => {
+      next();
+    });
+});
+
 // Separated Routes for each Resource
 // Note: Feel free to replace the example routes below with your own
 const usersRoutes   = require("./routes/user-router");
@@ -49,9 +66,39 @@ app.use("/api/messages", messageRoutes);
 // Home page
 // Warning: avoid creating more routes in this file!
 // Separate them into separate routes files (see above).
-// app.get("/", (req, res) => {
-//   res.render("index");
-// });
+
+app.get("/", (req, res) => {
+  res.redirect("/api/products");
+});
+
+app.get("/logout", (req, res) => {
+  req.session = null;
+  res.redirect("/");
+});
+
+app.get("/messages", (req, res) => {
+  getAllUserConversations(req.user.id)
+    .then(conversations => Promise.all(conversations.map(convo => {
+      const { other_id, author_id } = convo;
+      return Promise
+        .all([getUserById(other_id), getUserById(author_id)])
+        .then(([other, author]) => ({
+          ...convo,
+          other,
+          author,
+          time_sent: moment(convo.time_sent).fromNow()
+        }));
+    }))).then(conversations => {
+      res.render("conversation-list", { user: req.user, conversations });
+    })
+    .catch(errorMessage => {
+      res.status(500).json({ error: errorMessage });
+    })
+});
+
+app.get("/messages/:other_id", (req, res) => {
+  res.render("conversation", { user: req.user });
+});
 
 app.listen(PORT, () => {
   console.log(`Example app listening on port ${PORT}`);

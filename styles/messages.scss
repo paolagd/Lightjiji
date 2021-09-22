@@ -1,0 +1,38 @@
+*, *::before, *::after {
+  box-sizing: border-box;
+}
+
+.message-list {
+  max-height: 80vh;
+  overflow-y: scroll;
+}
+
+.message-list .message {
+  height: 8em;
+  display: flex;
+  margin: 1em 0;
+  padding: 1em;
+  gap: 1em;
+
+  border: 1px solid grey;
+  border-radius: .5em;
+}
+
+.message-list > .message:first-of-type {
+  margin-top: 0;
+}
+
+.message-list > .message:last-of-type {
+  margin-bottom: 0;
+}
+
+.message--name-content {
+  width: 100%;
+}
+
+.message--profile-pic {
+  height: 6em;
+  width: auto;
+  
+  border-radius: 50%;
+}

@@ -1,0 +1,42 @@
+*, *::before, *::after {
+  box-sizing: border-box;
+}
+
+.conversation-list .conversation {
+  height: 8em;
+  display: flex;
+  margin: 1em 0;
+  padding: 1em;
+  gap: 1em;
+
+  border: 1px solid grey;
+  border-radius: .5em;
+
+  color: black;
+
+  text-decoration: none;
+}
+
+.conversation-list > .conversation:first-of-type {
+  margin-top: 0;
+}
+
+.conversation-list > .conversation:last-of-type {
+  margin-bottom: 0;
+}
+
+.conversation:hover {
+  background-color: #f7f7f7;
+  color: #0A58CA;
+}
+
+.conversation--name-content {
+  width: 100%;
+}
+
+.conversation--profile-pic {
+  height: 6em;
+  width: auto;
+  
+  border-radius: 50%;
+}
