@@ -1,7 +1,9 @@
 // See: https://sass-lang.com/
+@use 'variables';
 
 body {
   background-color: #EEE;
+  font-family: variables.$logo-font;
 
   h1 {
     color: #244751;
