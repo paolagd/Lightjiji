@@ -31,13 +31,13 @@
               <label class="form-label">Price:</label>
               <div class="col">
                 <div class="form-outline">
-                  <input type="text" id="min-price" name="minimum_price" class="form-control" />
+                  <input type="number" id="min-price" name="minimum_price" class="form-control" />
                   <label class="form-label" for="min-price">From</label>
                 </div>
               </div>
               <div class="col">
                 <div class="form-outline">
-                  <input type="text" id="max-price" name="maximum_price" class="form-control" />
+                  <input type="number" id="max-price" name="maximum_price" class="form-control" />
                   <label class="form-label" for="max-price">To</label>
                 </div>
               </div>
@@ -72,34 +72,43 @@
         <section class="col-12 col-xl-9">
           <div class="row">
 
-            <% if (!products) { %>
-              <h4 class="col-9">No products found </h4>
+            <% if (!products.length) { %>
+              <div class="alert alert-danger" role="alert">
+                No products found.
+              </div>
             <%} else {%>
-
-                <% for(let product in products) { %>
+              <% for(let product in products) { %>
+                <% if (!products[product].is_sold) { %>
                   <a class="view-product" href="/api/products/<%= products[product].id %>">
-                  <div class="row col-12 product">
-                    <div class="col-4 align-self-center">
-                      <img class="align-self-center" src="<%= products[product].image_url %>">
-                    </div>
-                    <div class="row col-8">
-                      <header class="row col-12 mt-3">
-                        <h4 class="col-9">
-                          <%= products[product].name %>
-                        </h4>
-                        <h5 class="col-3 price">$<%= products[product].price / 100 %>
-                        </h5>
-                      </header>
-                      <div class="col-12">
-                        <p>
-                          <%= products[product].description %>
-                        </p>
-                        <button type="button" class="btn btn-warning favorite-button">Favourite</button>
+                    <div class="row col-12 product">
+                      <div class="col-4 align-self-center">
+                        <img class="align-self-center" src="<%= products[product].image_url %>">
+                      </div>
+                      <div class="row col-8">
+                        <header class="row col-12 mt-3">
+                          <h4 class="col-9">
+                            <%= products[product].name %>
+                          </h4>
+                          <h5 class="col-3 price">$<%= products[product].price / 100 %>
+                          </h5>
+                        </header>
+                        <div class="col-12">
+                          <p>
+                            <%= products[product].description %>
+                          </p>
+                          <% if (!products[product].favourite) { %>
+                            <button type="button" class="btn btn-warning favorite-button" data-index="<%= products[product].id %>">Favourite</button>
+                            <button type="button" class="btn btn-danger unfavorite-button" data-index="<%= products[product].id %>" hidden>unFavourite</button>
+                          <%} else {%>
+                            <button type="button" class="btn btn-warning favorite-button" data-index="<%= products[product].id %>" hidden>Favourite</button>
+                            <button type="button" class="btn btn-danger unfavorite-button" data-index="<%= products[product].id %>">unFavourite</button>
+                          <% } %>
+                        </div>
                       </div>
                     </div>
-                  </div>
-                </a>
+                  </a>
                 <% } %>
+              <% } %>
             <% } %>
           </div>
         </section>

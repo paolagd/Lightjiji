@@ -10,6 +10,7 @@ const { user } = require('pg/lib/defaults');
 
 router.get('/', (req, res) => {
   const userId = req.session.user_id;
+  req.query.userId = userId;
 
   let productsPromise = productQueries.getProductsSatisfying(req.query);
   let categories = categoryQueries.getAllCategories();
@@ -21,11 +22,9 @@ router.get('/', (req, res) => {
         categories: result[1],
         user: userId
       };
-
       res.render('product-listings', templateVars);
     })
     .catch(errorMessage => {
-      console.log(errorMessage)
       res.status(500).json({ error: errorMessage });
     });
 });
