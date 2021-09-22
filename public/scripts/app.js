@@ -10,7 +10,7 @@ $(() => {
         method: "PUT",
         url:  `/api/products/${productId}/unfavourite`
       }).done(() => {
-        $(button).closest('.product').slideUp();
+        location.reload();
       });
   });
 
