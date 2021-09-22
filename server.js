@@ -71,6 +71,11 @@ app.get("/", (req, res) => {
   res.redirect("/api/products");
 });
 
+app.get("/logout", (req, res) => {
+  req.session = null;
+  res.redirect("/");
+});
+
 app.get("/messages", (req, res) => {
   getAllUserConversations(req.user.id)
     .then(conversations => Promise.all(conversations.map(convo => {
