@@ -19,7 +19,7 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300;0,400;1,300;1,400&display=swap" rel="stylesheet">
 
-  <title>Searching for '<%= locals.searchTerm %>'</title>
+  <title>Lightjiji</title>
 </head>
 
 <body>
@@ -102,12 +102,14 @@
                           <p>
                             <%= products[product].description %>
                           </p>
-                          <% if (!products[product].favourite) { %>
-                            <button type="button" class="btn btn-warning favorite-button" data-index="<%= products[product].id %>">Favourite</button>
-                            <button type="button" class="btn btn-danger unfavorite-button" data-index="<%= products[product].id %>" hidden>unFavourite</button>
-                          <%} else {%>
-                            <button type="button" class="btn btn-warning favorite-button" data-index="<%= products[product].id %>" hidden>Favourite</button>
-                            <button type="button" class="btn btn-danger unfavorite-button" data-index="<%= products[product].id %>">unFavourite</button>
+                          <% if (user) { %>
+                            <% if (!products[product].favourite) { %>
+                              <button type="button" class="btn btn-warning favorite-button" data-index="<%= products[product].id %>">Favourite</button>
+                              <button type="button" class="btn btn-danger unfavorite-button" data-index="<%= products[product].id %>" hidden>unFavourite</button>
+                            <%} else {%>
+                              <button type="button" class="btn btn-warning favorite-button" data-index="<%= products[product].id %>" hidden>Favourite</button>
+                              <button type="button" class="btn btn-danger unfavorite-button" data-index="<%= products[product].id %>">unFavourite</button>
+                            <% } %>
                           <% } %>
                         </div>
                       </div>
@@ -122,7 +124,7 @@
     </main>
 
     <script type="text/javascript" src="/vendor/jquery-3.0.0.js"></script>
-    <script type="text/javascript" src="/scripts/app.js"></script>
+    <script type="text/javascript" src="/scripts/favourites.js"></script>
     <!-- Bootstrap JS -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/js/bootstrap.min.js"
       integrity="sha384-skAcpIdS7UcVUC05LJ9Dxay8AXcDYfBJqt1CJ85S/CFujBsIzCIv+l9liuYLaMQ/"
