@@ -9,7 +9,10 @@ const bodyParser = require("body-parser");
 const sass       = require("node-sass-middleware");
 const app        = express();
 const morgan     = require('morgan');
-const { getAllUserConversations } = require("./lib/messages");
+const {
+  getAllUserConversations,
+  sendMessage
+} = require("./lib/messages");
 const { getUserById } = require('./lib/users');
 const { requireLogin } = require("./routes/routeHelper");
 const moment = require('moment');
@@ -110,6 +113,17 @@ app.get("/messages/:other_id", (req, res) => {
       }
 
       res.render("conversation", { user: req.user, other: otherUser });
+    });
+});
+
+app.post("/messages/:other_id", (req, res) => {
+  const fromUserId = req.session.user_id;
+  const toUserId = req.params.other_id;
+  const messageContent = req.body.message;
+
+  sendMessage(fromUserId, toUserId, messageContent)
+    .then(() => {
+      res.redirect(`/messages/${toUserId}`);
     });
 });
 
