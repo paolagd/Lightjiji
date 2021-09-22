@@ -100,7 +100,17 @@ app.get("/messages", (req, res) => {
 
 app.get("/messages/:other_id", requireLogin);
 app.get("/messages/:other_id", (req, res) => {
-  res.render("conversation", { user: req.user });
+  const otherUserID = req.params.other_id;
+
+  getUserById(otherUserID)
+    .then(otherUser => {
+      if (!otherUser) {
+        res.status(401).send('User not found');
+        return;
+      }
+
+      res.render("conversation", { user: req.user, other: otherUser });
+    });
 });
 
 app.listen(PORT, () => {

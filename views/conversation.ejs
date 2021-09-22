@@ -5,6 +5,8 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
 
+  <title>Chat with <%= `${locals.other.first_name} ${locals.other.last_name}` %></title>
+
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/css/bootstrap.min.css"
     integrity="sha384-F3w7mX95PdgyTmZZMECAngseQB83DfGTowi0iMjiWaeVhAn4FJkqJByhZMI3AhiU" crossorigin="anonymous" />
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css"
@@ -38,7 +40,7 @@
 
     <form id="send-message-form">
       <div class="input-group mt-3">
-        <input type="text" name="message-content" class="form-control" placeholder="Message user" />
+        <input type="text" name="message-content" class="form-control" placeholder="Message <%= `${locals.other.first_name} ${locals.other.last_name}` %>" />
         <div class="input-group-append">
           <input class="btn btn-success" type="submit" value="Send Message!" />
         </div>
