@@ -26,7 +26,7 @@ $(() => {
   });
 
   $('.save-changes').on('click', function(e) {
-    //e.preventDefault();
+    // e.preventDefault();
     const button = $(this)[0];
     const productId = $(button).data("id");
 
