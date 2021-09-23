@@ -20,6 +20,15 @@ $(document).ready(() => {
     `);
   };
 
+  /**
+   * A message returned from the API looks like:
+   *   { "message_id": 1,
+   *     "author_id": 1,
+   *     "content": "Hello, I was wondering about the motorcycle you are selling, is it still available?",
+   *     "time_sent": "2021-09-23T18:57:13.614Z" },
+   * and has an author_id field. This function adds a user field
+   * to it using the /api/users/:user_id endpoint.
+   */
   const populateMessageAuthor = message => {
     const requestOptions = {
       method: "get",
@@ -34,11 +43,18 @@ $(document).ready(() => {
       }));
   };
 
+  /**
+   * Removes everything from a string before, including the first instance of `removeMe`.
+   */
   const stripBefore = (s, removeMe) => {
     const idx = s.indexOf(removeMe);
     return idx >= 0 ? s.slice(idx + removeMe.length) : idx;
   };
 
+  /**
+   * The user ID of the user you're conversing with is at the end of the URL
+   * Example: lightjiji.com/messages/389 -> talking with user with id 389.
+   */
   const getOtherUserID = () => {
     const pathName = location.pathname;
     const userIDStr = stripBefore(pathName, "/messages/");
@@ -76,6 +92,7 @@ $(document).ready(() => {
     messageList.scrollTop(messageList.prop("scrollHeight"));
   };
 
+  // Prepopulate messages element
   const otherUserID = getOtherUserID();
   getMessagesWithUser(otherUserID)
     .then(messages_ => Promise.all(messages_.map(populateMessageAuthor)))
@@ -97,6 +114,7 @@ $(document).ready(() => {
     sendMessageToUser(otherUserID, messageContent)
       .then(populateMessageAuthor)
       .then(newMessage => {
+        // add new message to DOM
         messages.push(newMessage);
         rerenderMessages();
         scrollToBottomOfMessages();
@@ -107,4 +125,10 @@ $(document).ready(() => {
 
     return false;
   });
+
+  // Update the message elements with new time sent values.
+  const REFRESH_INTERVAL = 60;
+  setInterval(() => {
+    rerenderMessages();
+  }, REFRESH_INTERVAL * 1000);
 });
