@@ -30,7 +30,7 @@
       <div class="row">
         <!-- Sidebar -->
         <aside class="col-12  col-xl-3">
-          <form id="filters-search-form" method="GET" action="/api/products">
+          <form id="filters-search-form" method="GET" action="/products">
             <% if (locals.searchTerm) { %>
               <!-- Preserve product name -->
               <input type="hidden" name="q" value="<%= locals.searchTerm %>" />
@@ -41,14 +41,14 @@
               <div class="col">
                 <div class="form-outline">
                   <input type="number" id="min-price" name="minimum_price" class="form-control" min="0"
-                    value="<%= filters.minimum_price || 0 %>" />
+                    value="<%= filters.minimum_price || '' %>" />
                   <label class="form-label" for="min-price">From</label>
                 </div>
               </div>
               <div class="col">
                 <div class="form-outline">
                   <input type="number" id="max-price" name="maximum_price" class="form-control" min="0"
-                    value="<%= filters.maximum_price || 999999 %>" />
+                    value="<%= filters.maximum_price || '' %>" />
                   <label class="form-label" for="max-price">To</label>
                 </div>
               </div>
@@ -90,7 +90,7 @@
             <%} else {%>
               <% for(let product in products) { %>
                 <% if (!products[product].is_sold) { %>
-                  <a class="view-product" href="/api/products/<%= products[product].id %>">
+                  <a class="view-product" href="/products/<%= products[product].id %>">
                     <div class="row col-12 product">
                       <div class="col-4 align-self-center">
                         <img class="align-self-center" src="<%= products[product].image_url %>">
