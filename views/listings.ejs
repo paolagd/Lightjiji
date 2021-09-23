@@ -38,7 +38,7 @@
                   <option value="<%= cat.id %>">
                     <%= cat.name %>
                   </option>
-                  <% } %>
+                <% } %>
               </select>
             </div>
             <div class="col-md-6">
@@ -72,8 +72,10 @@
         <section class="col-12 col-xl-9">
           <div class="row">
 
-            <% if (!products) { %>
-              <h4 class="col-9">No products found </h4>
+            <% if (!products.length) { %>
+              <div class="alert alert-danger" role="alert">
+                You have not posted any products yet!
+              </div>
             <%} else {%>
 
                 <% for(let product in products) { %>
