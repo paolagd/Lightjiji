@@ -39,9 +39,10 @@
       <h1>Open Conversations</h1>
 
       <section class="conversation-list">
-        <% for (const {other_id, other, author, time_sent, content } of locals.conversations) { %>
+        <% for (const {other_id, other, author, time_sent, content, profile_pic_url } of locals.conversations) { %>
+
         <a href="/messages/<%= other_id %>" class="conversation">
-          <img class="conversation--profile-pic" src="https://pbs.twimg.com/profile_images/573692360263004161/gOvizBEP_400x400.jpeg">
+          <img class="conversation--profile-pic" src="<%= author.profile_pic_url %>">
           <div>
             <div class="conversation--name-date">
               <span class="conversation--other-name">
