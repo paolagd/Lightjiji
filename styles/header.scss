@@ -1,31 +1,30 @@
-$font-size : 30px;
-$color: #055052;
+@import "variables";
+$font-size : 18px;
 
 .navbar {
-  background-color: #CEE5D0;
   padding: 40px 20px;
   font-size: $font-size;
+  box-shadow: 0 8px 8px -4px #1987546e;
 
   .form-control{
     width: 340px;
     height: 45px;
     margin-left: 60px;
   }
+
   .navbar-brand{
-    font-size: $font-size;
+    font-size: 35px;
+    font-family: 'Grand Hotel', cursive !important;
+    color: #198754;
   }
 
   .nav-link{
-   margin-right: 15px;
-   color:$color;
-  }
-
-  .navbar-toggler{
-    background-color:$color;
+    margin-right: 15px;
+    color: #198754 !important;
   }
 
   .fa-store-alt{
-    color:$color;
+    color: #198754;
   }
 
   .fa-heart:hover{
