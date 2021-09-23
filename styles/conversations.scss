@@ -9,13 +9,10 @@ main{
 .conversation-list .conversation {
   height: 8em;
   display: flex;
-  margin: 1em 0;
   padding: 1em;
-  //gap: 1em;
+  gap: 1em;
 
   border-bottom: 2px solid black;
-  // border: 1px solid grey;
-  //border-radius: .5em;
 
   color: black;
   text-decoration: none;
@@ -34,8 +31,24 @@ main{
   color: #0A58CA;
 }
 
-.conversation--name-content {
+.conversation--other-name {
+  color: #198754;
+  font-weight: bold;
+}
+
+.conversation--content {
   width: 100%;
+}
+
+.conversation--name-time {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+}
+
+.conversation--name {
+  color: #198754;
+  font-weight: bold;
 }
 
 .conversation--profile-pic {
