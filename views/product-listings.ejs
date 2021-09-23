@@ -31,10 +31,12 @@
         <!-- Sidebar -->
         <aside class="col-12  col-xl-3">
           <form id="filters-search-form" method="GET" action="/products">
+            <h5>Filters:</h5>
             <% if (locals.searchTerm) { %>
               <!-- Preserve product name -->
               <input type="hidden" name="q" value="<%= locals.searchTerm %>" />
             <% } %>
+
             <!-- Price -->
             <div class="row mb-4 mt-4">
               <label class="form-label">Price:</label>
