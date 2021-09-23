@@ -25,10 +25,14 @@ $(() => {
     }
   });
 
+  let productId = null;
+
+  $('#edit-form').on('show.bs.modal', function(e) {
+    productId = $(e.relatedTarget).data("product-id");
+  });
+
   $('.save-changes').on('click', function(e) {
-    //e.preventDefault();
-    const button = $(this)[0];
-    const productId = $(button).data("id");
+    e.preventDefault();
 
     const name = $('#edit-title').val();
     const price = $('#edit-price').val();

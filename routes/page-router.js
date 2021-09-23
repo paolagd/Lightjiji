@@ -30,6 +30,9 @@ router.get("/logout", (req, res) => {
   res.redirect("/");
 });
 
+
+// MESSAGES ROUTES
+
 router.get("/messages", requireLogin);
 router.get("/messages", (req, res) => {
   getAllUserConversations(req.user.id)
@@ -77,6 +80,9 @@ router.post("/messages/:other_id", (req, res) => {
     });
 });
 
+
+// PRODUCTS ROUTES
+
 //GET products
 
 router.get('/products', (req, res) => {
@@ -89,7 +95,11 @@ router.get('/products', (req, res) => {
   let productsPromise = productQueries.getProductsSatisfying(req.query);
   let categories = categoryQueries.getAllCategories();
 
-  Promise.all([productsPromise, categories])
+  Promise.all(
+    [
+      productsPromise,
+      categories
+    ])
     .then(result => {
       const templateVars = {
         searchTerm,
@@ -105,6 +115,7 @@ router.get('/products', (req, res) => {
     });
 });
 
+
 //POST products
 
 router.post('/products', (req, res) => {
@@ -118,10 +129,8 @@ router.post('/products', (req, res) => {
     .then(product => {
       res.redirect("products/myListings");
     })
-
     .catch(errorMessage => res.status(500).json({ error: errorMessage }));
 });
-
 
 //Get My Listings
 router.get('/myListings', requireLogin);

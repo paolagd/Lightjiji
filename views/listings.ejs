@@ -104,7 +104,7 @@
                           data-category_id="<%= products[product].category_id %>"
                           data-featured="<%= products[product].is_featured %>"
                           data-image_url="<%= products[product].image_url %>"
-                          class="btn btn-primary edit-button" data-bs-toggle="modal" data-bs-target="#edit-form">Edit</button>
+                          class="btn btn-primary edit-button" data-product-id="<%= products[product].id %>" data-bs-toggle="modal" data-bs-target="#edit-form">Edit</button>
                         <button type="button" data-index="<%= products[product].id %>" class="btn btn-dark delete-button">Delete</button>
                         <% } else { %>
                           <h4 class="sold">SOLD</h4>
@@ -159,7 +159,7 @@
             </div>
           </div>
           <div class="col-12">
-            <button type="submit" data-id="<%= products[product].id %>" class="btn btn-primary save-changes">Save Changes</button>
+            <button type="submit" class="btn btn-primary save-changes">Save Changes</button>
           </div>
         </form>
       </div>
