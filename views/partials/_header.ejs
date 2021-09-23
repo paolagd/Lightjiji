@@ -11,8 +11,9 @@
       <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
         <form class="row form-inline" action="/products" method="get">
           <div class="col">
-            <input class="form-control" name="q" type="search" placeholder="Search" aria-label="Search"
-                <% if (locals.searchTerm) { %>value="<%= locals.searchTerm %>"<% } %> />
+            <input class="form-control" name="q" type="search" placeholder="What are you looking for?" aria-label="Search"
+                value="<%= locals.searchTerm || '' %>">
+
           </div>
           <div class="col">
             <button class="btn btn-success" type="submit">Search</button>
@@ -25,9 +26,9 @@
             <a class="nav-item nav-link" href="/register">Register</a>
             <%} else { %>
 
-          <a class="nav-item nav-link" href="/myListings">Listings</a>
-          <a class="nav-item nav-link" href="/favourites"><i class="fas fa-heart"></i></a>
-          <a class="nav-item nav-link" href="/messages"><i class="far fa-envelope"></i></a>
+            <a class="nav-item nav-link" href="/myListings">Listings</a>
+            <a class="nav-item nav-link" href="/favourites"><i class="fas fa-heart"></i></a>
+            <a class="nav-item nav-link" href="/messages"><i class="far fa-envelope"></i></a>
           <form class="form-inline" method="GET" action="/logout">
 
             <button type="submit" class="btn btn-outline-dark">Logout</button>
