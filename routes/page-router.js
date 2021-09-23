@@ -1,14 +1,85 @@
 const express = require('express');
 const router = express.Router();
+const {
+  getAllUserConversations,
+  sendMessage
+} = require("../lib/messages");
+const { getUserById } = require('../lib/users');
 const productQueries = require('../lib/products');
 const favouriteQueries = require('../lib/favourites');
 const categoryQueries = require('../lib/categories');
+const { requireLogin } = require("./routeHelper");
 const timeago = require('timeago.js');
-const { requireLogin } = require('./routeHelper');
+const moment = require('moment');
 
-//GET /api/products
+router.get("/", (req, res) => {
+  res.redirect("/products");
+});
 
-router.get('/', (req, res) => {
+// LOGIN
+router.get('/login/:id', (req, res) => {
+  // cookie-session
+  req.session.user_id = req.params.id;
+
+  // redirect the client
+  res.redirect('/');
+});
+
+router.get("/logout", (req, res) => {
+  req.session = null;
+  res.redirect("/");
+});
+
+router.get("/messages", requireLogin);
+router.get("/messages", (req, res) => {
+  getAllUserConversations(req.user.id)
+    .then(conversations => Promise.all(conversations.map(convo => {
+      const { other_id, author_id } = convo;
+      return Promise
+        .all([getUserById(other_id), getUserById(author_id)])
+        .then(([other, author]) => ({
+          ...convo,
+          other,
+          author,
+          time_sent: moment(convo.time_sent).fromNow()
+        }));
+    }))).then(conversations => {
+      res.render("conversation-list", { user: req.user, conversations });
+    })
+    .catch(errorMessage => {
+      res.status(500).json({ error: errorMessage });
+    })
+});
+
+router.get("/messages/:other_id", requireLogin);
+router.get("/messages/:other_id", (req, res) => {
+  const otherUserID = req.params.other_id;
+
+  getUserById(otherUserID)
+    .then(otherUser => {
+      if (!otherUser) {
+        res.status(401).send('User not found');
+        return;
+      }
+
+      res.render("conversation", { user: req.user, other: otherUser });
+    });
+});
+
+router.post("/messages/:other_id", (req, res) => {
+  const fromUserId = req.session.user_id;
+  const toUserId = req.params.other_id;
+  const messageContent = req.body.message;
+
+  sendMessage(fromUserId, toUserId, messageContent)
+    .then(() => {
+      res.redirect(`/messages/${toUserId}`);
+    });
+});
+
+//GET products
+
+router.get('/products', (req, res) => {
   const userId = req.session.user_id;
   const searchTerm = req.query.q || null;
 
@@ -18,11 +89,7 @@ router.get('/', (req, res) => {
   let productsPromise = productQueries.getProductsSatisfying(req.query);
   let categories = categoryQueries.getAllCategories();
 
-  Promise.all(
-    [
-      productsPromise,
-      categories
-    ])
+  Promise.all([productsPromise, categories])
     .then(result => {
       const templateVars = {
         searchTerm,
@@ -38,9 +105,9 @@ router.get('/', (req, res) => {
     });
 });
 
-//POST /api/products
+//POST products
 
-router.post('/', (req, res) => {
+router.post('/products', (req, res) => {
   const userId = req.session.user_id;
   if (!userId) {
     res.status(401).send('User not found')
@@ -49,8 +116,9 @@ router.post('/', (req, res) => {
   console.log(req.body);
   productQueries.createProductListing({ ...req.body, seller_id: userId })
     .then(product => {
-      res.redirect("/api/products/myListings");
+      res.redirect("products/myListings");
     })
+
     .catch(errorMessage => res.status(500).json({ error: errorMessage }));
 });
 
@@ -112,98 +180,13 @@ router.get('/favourites', (req, res) => {
 
 
 // GET /products/:product_id
-router.get("/:product_id", (req, res) => {
+router.get("/products/:product_id", (req, res) => {
   const userId = req.session.user_id;
 
   productQueries.getProductById(req.params.product_id)
     .then(product => {
       const templateVars = { user: userId, product, timeago }
       res.render('review-products', templateVars);
-    })
-    .catch(errorMessage => {
-      res.status(500).json({ error: errorMessage });
-    });
-
-});
-
-// PUT /products/:product_id
-router.put("/:product_id", (req, res) => {
-  const productId = req.params.product_id;
-  const newValues = req.body;
-
-  productQueries.updateProductListing(productId, newValues)
-    .then(product => {
-      res.json({ product });
-    })
-    .catch(errorMessage => {
-      res.status(500).json({ error: errorMessage });
-    });
-
-});
-
-// PUT /products/:product_id/sold
-router.put("/:product_id/sold", (req, res) => {
-  const productId = req.params.product_id;
-
-  productQueries.markSoldProductListing(productId)
-    .then(product => {
-      res.json({ product });
-    })
-    .catch(errorMessage => {
-      res.status(500).json({ error: errorMessage });
-    });
-
-});
-
-// DELETE /products/:product_id
-router.delete("/:product_id", (req, res) => {
-  const productId = req.params.product_id;
-
-  productQueries.deleteProductListing(productId)
-    .then(product => {
-      res.json({ product });
-    })
-    .catch(errorMessage => {
-      res.status(500).json({ error: errorMessage });
-    });
-
-});
-
-
-// PUT /products/unfavourite:product_id
-router.put("/:product_id/unfavourite", (req, res) => {
-  const productId = req.params.product_id;
-  const userId = req.session.user_id;
-
-  if (!userId) {
-    res.status(401).send('User not found')
-    return;
-  }
-
-  favouriteQueries.unfavouriteProduct(productId, userId)
-    .then(product => {
-      res.json({ product });
-    })
-    .catch(errorMessage => {
-      res.status(500).json({ error: errorMessage });
-    });
-
-});
-
-
-// PUT /products/favourite:product_id
-router.put("/:product_id/favourite", (req, res) => {
-  const productId = req.params.product_id;
-  const userId = req.session.user_id;
-
-  if (!userId) {
-    res.status(401).send('User not found')
-    return;
-  }
-
-  favouriteQueries.favouriteProduct(productId, userId)
-    .then(product => {
-      res.json({ product });
     })
     .catch(errorMessage => {
       res.status(500).json({ error: errorMessage });

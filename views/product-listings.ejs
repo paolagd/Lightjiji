@@ -30,7 +30,7 @@
       <div class="row">
         <!-- Sidebar -->
         <aside class="col-12  col-xl-3">
-          <form id="filters-search-form" method="GET" action="/api/products">
+          <form id="filters-search-form" method="GET" action="/products">
             <% if (locals.searchTerm) { %>
               <!-- Preserve product name -->
               <input type="hidden" name="q" value="<%= locals.searchTerm %>" />
@@ -90,7 +90,7 @@
             <%} else {%>
               <% for(let product in products) { %>
                 <% if (!products[product].is_sold) { %>
-                  <a class="view-product" href="/api/products/<%= products[product].id %>">
+                  <a class="view-product" href="/products/<%= products[product].id %>">
                     <div class="row col-12 product">
                       <div class="col-4 align-self-center">
                         <img class="align-self-center" src="<%= products[product].image_url %>">
