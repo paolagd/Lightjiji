@@ -87,8 +87,12 @@ $(document).ready(() => {
 
   $("#send-message-form").on("submit", function (event) {
     event.preventDefault();
-    const messageContent = $(this.elements["message-content"]).val();
+    const messageElement = $(this.elements["message-content"]);
+    const messageContent = messageElement.val();
     const otherUserID = getOtherUserID();
+
+    // Clear message input field
+    messageElement.val("");
 
     sendMessageToUser(otherUserID, messageContent)
       .then(populateMessageAuthor)
