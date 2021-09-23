@@ -8,15 +8,15 @@ $(document).ready(() => {
   const createMessageElement = ({author, content, time_sent}) => {
     return $(`
     <article class="message">
-    <img class="message--profile-pic" src="https://pbs.twimg.com/profile_images/573692360263004161/gOvizBEP_400x400.jpeg" />
-    <div>
-      <div class="message--name-date">
-        <span class="message--author-name">${escape(author.first_name)} ${escape(author.last_name)}</span>
-        <span>${timeago.format(time_sent)}</span>
+      <img class="message--profile-pic" src="https://pbs.twimg.com/profile_images/573692360263004161/gOvizBEP_400x400.jpeg" />
+      <div>
+        <div class="message--name-date">
+          <span class="message--author-name">${escape(author.first_name)} ${escape(author.last_name)}</span>
+          <span>${timeago.format(time_sent)}</span>
+        </div>
+        <p>${escape(content)}</p>
       </div>
-      <p>${escape(content)}</p>
-    </div>
-  </article>
+    </article>
     `);
   };
 
