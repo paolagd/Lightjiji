@@ -24,7 +24,8 @@ router.get('/', (req, res) => {
         searchTerm,
         products: result[0],
         categories: result[1],
-        user: userId
+        user: userId,
+        filters: req.query
       };
       res.render('product-listings', templateVars);
     })
