@@ -14,9 +14,6 @@ $(() => {
     $('#edit-description').val(description);
     $('#edit-price').val(price);
     $('#edit-image').val(image);
-    $('#edit-title').val(name);
-    $('#edit-title').val(name);
-    console.log("Is Featured from db", isFeatured);
 
     if(isFeatured) {
       $('#edit-Check').attr("checked",true);

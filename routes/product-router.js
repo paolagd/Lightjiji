@@ -46,7 +46,6 @@ router.delete("/:product_id", (req, res) => {
 
 });
 
-
 // PUT /products/unfavourite:product_id
 router.put("/:product_id/unfavourite", (req, res) => {
   const productId = req.params.product_id;
