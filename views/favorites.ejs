@@ -41,6 +41,7 @@
         <%} else {%>
 
           <% for(let product in products) { %>
+            <a class="view-product" href="/products/<%= products[product].id %>">
             <div class="row col-md-9 product">
               <div class="col-4 align-self-center">
                 <img class="align-self-center" src="<%= products[product].image_url %>">
@@ -61,6 +62,7 @@
                 </div>
               </div>
             </div>
+          </a>
           <% } %>
 
         <% } %>
