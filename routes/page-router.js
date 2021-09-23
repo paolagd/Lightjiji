@@ -37,6 +37,8 @@ router.get("/logout", (req, res) => {
 router.get("/messages", requireLogin);
 router.get("/messages", (req, res) => {
   getAllUserConversations(req.user.id)
+    // Most recent conversation should come first
+    .then(conversations => conversations.sort((c1, c2) => c2.time_sent - c1.time_sent))
     .then(conversations => Promise.all(conversations.map(convo => {
       const { other_id, author_id } = convo;
       return Promise
