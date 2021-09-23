@@ -37,7 +37,7 @@
 
   <body>
     <%- include("partials/_header", {user: locals.user}); %>
-    <main class="container mt-4 mb-4">
+    <main class="container mb-4">
       <% if (locals.conversations.length === 0) { %>
         <div class="alert alert-danger" role="alert">
           You have not started any conversations yet!

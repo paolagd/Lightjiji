@@ -41,7 +41,7 @@
 <body>
   <%- include("partials/_header", {user: locals.user}); %>
 
-  <main class="container mt-4 mb-4">
+  <main class="container mb-4">
     <a href="/messages" class="btn btn-primary btn-block mb-4">&lt; Back to convos</a>
     <h1>Chat with <%= `${locals.other.first_name} ${locals.other.last_name}` %></h1>
 

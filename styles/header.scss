@@ -5,6 +5,9 @@ $font-size : 18px;
   padding: 40px 20px;
   font-size: $font-size;
   box-shadow: 0 8px 8px -4px #1987546e;
+  position: fixed;
+  top: 0;
+  width: 100%;
 
   .form-control{
     width: 340px;

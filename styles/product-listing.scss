@@ -1,8 +1,8 @@
 .product-listing-container{
-  margin-top: 4vh;
+  margin-top: 180px;
 
   aside{
-    height: 50vh;
+    height: 40vh;
   }
 }
 
@@ -42,6 +42,8 @@
 // Large devices (desktops, 992px and up)
 @media (max-width: 992px) {
   .product-listing-container{
-    margin-top: 10vh;
+    aside{
+      height: 50vh;
+    }
   }
 }
