@@ -14,17 +14,17 @@ $font-size : 18px;
 
   .navbar-brand{
     font-size: 35px;
-    font-family: 'Grand Hotel', cursive !important;
-    color: #198754;
+    font-family: $logo-font;
+    color: $green-generic;
   }
 
   .nav-link{
     margin-right: 15px;
-    color: #198754 !important;
+    color: $green-generic !important;
   }
 
   .fa-store-alt{
-    color: #198754;
+    color: $green-generic;
   }
 
   .fa-heart:hover{
