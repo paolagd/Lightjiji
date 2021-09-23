@@ -72,7 +72,8 @@
 
             <!-- Checkbox -->
             <div class="form-check mb-4">
-              <input class="form-check-input me-2" type="checkbox" name="is_featured" value="<%= !!filters.is_featured %>" />
+              <input class="form-check-input me-2" type="checkbox" name="is_featured" value="on" 
+                <% if (filters.is_featured === 'on') { %> checked <% } %> />
               <label class="form-check-label"> Only featured items</label>
             </div>
 
