@@ -127,7 +127,7 @@ router.post('/products', (req, res) => {
   console.log(req.body);
   productQueries.createProductListing({ ...req.body, seller_id: userId })
     .then(product => {
-      res.redirect("products/myListings");
+      res.redirect("/myListings");
     })
     .catch(errorMessage => res.status(500).json({ error: errorMessage }));
 });
