@@ -9,7 +9,9 @@
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/css/bootstrap.min.css" rel="stylesheet"
     integrity="sha384-F3w7mX95PdgyTmZZMECAngseQB83DfGTowi0iMjiWaeVhAn4FJkqJByhZMI3AhiU" crossorigin="anonymous">
 
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" integrity="sha512-1ycn6IcaQQ40/MKBW2W4Rhis/DbILU74C1vSrLJxCq57o941Ym01SwNsOMqvEBFlcgUa6xLiPY/NS5R+E6ztJQ==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css"
+    integrity="sha512-1ycn6IcaQQ40/MKBW2W4Rhis/DbILU74C1vSrLJxCq57o941Ym01SwNsOMqvEBFlcgUa6xLiPY/NS5R+E6ztJQ=="
+    crossorigin="anonymous" referrerpolicy="no-referrer" />
   <link rel="stylesheet" href="/styles/listings.css" type="text/css" />
   <link rel="stylesheet" href="/styles/header.css" type="text/css" />
 
@@ -24,7 +26,7 @@
       <div class="row">
         <!-- Sidebar -->
         <aside class="col-12  col-xl-3">
-          <form class="row g-3" add-listing action="/products" method="POST" >
+          <form class="row g-3" add-listing action="/products" method="POST">
             <h5>Something to sell?</h5>
             <div class="col-md-12">
               <label for="title" class="form-label">Add Title</label>
@@ -38,7 +40,7 @@
                   <option value="<%= cat.id %>">
                     <%= cat.name %>
                   </option>
-                <% } %>
+                  <% } %>
               </select>
             </div>
             <div class="col-md-6">
@@ -65,7 +67,6 @@
               <button type="submit" class="btn btn-primary post-ad">Post Ad</button>
             </div>
           </form>
-
         </aside>
 
         <!-- Listings -->
@@ -76,7 +77,7 @@
               <div class="alert alert-danger" role="alert">
                 You have not posted any products yet!
               </div>
-            <%} else {%>
+              <%} else {%>
 
                 <% for(let product in products) { %>
                   <div class="row col-12 product">
@@ -95,80 +96,82 @@
                         <p>
                           <%= products[product].description %>
                         </p>
-                        <% if(products[product].is_sold !== true) { %>
-                        <button type="button" data-index="<%= products[product].id %>" class="btn btn-success sold-button">Sold</button>
+                        <% if(products[product].is_sold !==true) { %>
+                          <button type="button" data-index="<%= products[product].id %>"
+                            class="btn btn-success sold-button">Sold</button>
 
-                        <button type="button" data-name="<%= products[product].name %>"
-                          data-description="<%= products[product].description%>"
-                          data-price="<%= products[product].price /100 %>"
-                          data-category_id="<%= products[product].category_id %>"
-                          data-featured="<%= products[product].is_featured %>"
-                          data-image_url="<%= products[product].image_url %>"
-                          class="btn btn-primary edit-button" data-product-id="<%= products[product].id %>" data-bs-toggle="modal" data-bs-target="#edit-form">Edit</button>
-                        <button type="button" data-index="<%= products[product].id %>" class="btn btn-dark delete-button">Delete</button>
-                        <% } else { %>
-                          <h4 class="sold">SOLD</h4>
-                          <%} %>
-
+                          <button type="button" data-name="<%= products[product].name %>"
+                            data-description="<%= products[product].description%>"
+                            data-price="<%= products[product].price /100 %>"
+                            data-category_id="<%= products[product].category_id %>"
+                            data-featured="<%= products[product].is_featured %>"
+                            data-image_url="<%= products[product].image_url %>" class="btn btn-primary edit-button"
+                            data-product-id="<%= products[product].id %>" data-bs-toggle="modal"
+                            data-bs-target="#edit-form">Edit</button>
+                          <button type="button" data-index="<%= products[product].id %>"
+                            class="btn btn-dark delete-button">Delete</button>
+                          <% } else { %>
+                            <h4 class="sold">SOLD</h4>
+                            <%} %>
                       </div>
                     </div>
                   </div>
 
                   <!-- Modal -->
-<div class="modal fade" id="edit-form" tabindex="-1" aria-labelledby="ModalLabel" aria-hidden="true">
-  <div class="modal-dialog modal-xl">
-    <div class="modal-content">
-      <div class="modal-header">
-        <h5 class="modal-title" id="ModalLabel">Edit Ad</h5>
-        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-      </div>
-      <div class="modal-body">
-        <form class="row g-3 changed-form">
-          <div class="col-md-12">
-            <label class="form-label">Title</label>
-            <input type="text" class="form-control" id="edit-title" name="name">
-          </div>
-          <div class="col-md-6">
-            <label class="form-label">Select category</label>
-            <select id="edit-category" class="form-select" name="category">
-                <% for(let cat of categories) { %>
-                  <option value="<%= cat.id %>">
-                    <%= cat.name %>
-                  </option>
+                  <div class="modal fade" id="edit-form" tabindex="-1" aria-labelledby="ModalLabel" aria-hidden="true">
+                    <div class="modal-dialog modal-xl">
+                      <div class="modal-content">
+                        <div class="modal-header">
+                          <h5 class="modal-title" id="ModalLabel">Edit Ad</h5>
+                          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                        </div>
+                        <div class="modal-body">
+                          <form class="row g-3 changed-form">
+                            <div class="col-md-12">
+                              <label class="form-label">Title</label>
+                              <input type="text" class="form-control" id="edit-title" name="name">
+                            </div>
+                            <div class="col-md-6">
+                              <label class="form-label">Select category</label>
+                              <select id="edit-category" class="form-select" name="category">
+                                <% for(let cat of categories) { %>
+                                  <option value="<%= cat.id %>">
+                                    <%= cat.name %>
+                                  </option>
+                                  <% } %>
+                              </select>
+                            </div>
+                            <div class="col-md-6">
+                              <label class="form-label">Price</label>
+                              <input type="text" class="form-control" id="edit-price" name="price">
+                            </div>
+                            <div class="col-12">
+                              <label class="form-label">Description</label>
+                              <textarea class="form-control" id="edit-description" rows="3"
+                                name="description"></textarea>
+                            </div>
+                            <div class="col-md-12">
+                              <label class="form-label">Image</label>
+                              <input type="text" class="form-control" id="edit-image" name="image_url">
+                            </div>
+                            <div class="col-12">
+                              <div class="form-check">
+                                <input class="form-check-input" type="checkbox" id="edit-Check" name="is_featured">
+                                <label class="form-check-label">
+                                  Feature your product?
+                                </label>
+                              </div>
+                            </div>
+                            <div class="col-12">
+                              <button type="submit" class="btn btn-primary save-changes">Save Changes</button>
+                            </div>
+                          </form>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
                   <% } %>
-            </select>
-          </div>
-          <div class="col-md-6">
-            <label class="form-label">Price</label>
-            <input type="text" class="form-control" id="edit-price" name="price">
-          </div>
-          <div class="col-12">
-            <label class="form-label">Description</label>
-            <textarea class="form-control" id="edit-description" rows="3" name="description"></textarea>
-          </div>
-          <div class="col-md-12">
-            <label class="form-label">Image</label>
-            <input type="text" class="form-control" id="edit-image" name="image_url">
-          </div>
-          <div class="col-12">
-            <div class="form-check">
-              <input class="form-check-input" type="checkbox" id="edit-Check" name="is_featured">
-              <label class="form-check-label">
-                Feature your product?
-              </label>
-            </div>
-          </div>
-          <div class="col-12">
-            <button type="submit" class="btn btn-primary save-changes">Save Changes</button>
-          </div>
-        </form>
-      </div>
-    </div>
-  </div>
-</div>
-
-                <% } %>
-            <% } %>
+                    <% } %>
           </div>
         </section>
       </div>
@@ -182,7 +185,6 @@
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/js/bootstrap.min.js"
       integrity="sha384-skAcpIdS7UcVUC05LJ9Dxay8AXcDYfBJqt1CJ85S/CFujBsIzCIv+l9liuYLaMQ/"
       crossorigin="anonymous"></script>
-
 </body>
 
 </html>

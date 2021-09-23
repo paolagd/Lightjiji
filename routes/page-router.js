@@ -118,6 +118,7 @@ router.get('/products', (req, res) => {
 
 
 //POST products
+//add new product and renders mylistings page
 router.post('/products', (req, res) => {
   const userId = req.session.user_id;
   if (!userId) {
@@ -133,6 +134,7 @@ router.post('/products', (req, res) => {
 });
 
 //Get My Listings
+//Get all the products posted by a user
 router.get('/myListings', requireLogin);
 router.get('/myListings', (req, res) => {
   const userId = req.session.user_id;
