@@ -14,9 +14,9 @@ SEARCH_URL_FORMAT = 'https://www.kijiji.ca/{region}/{search_term}/page-{page_num
 
 def scrape_product_element(product_element):
   price_text = product_element.find('div', class_='price').get_text(strip=True)
-  price = price_text.replace('$', '').replace(',', '').replace('.', '')
+  price = int(price_text.replace('$', '').replace(',', '').replace('.', ''))
 
-  name = product_element.find('div', class_='price').get_text(strip=True)
+  name = product_element.find('div', class_='title').get_text(strip=True)
   description = product_element.find('div', class_='description').get_text(strip=True)
 
   image_url = product_element.select_one('.image img')['data-src']
@@ -43,7 +43,13 @@ def scrape_products(product_name, max_num_products, region):
     if idx >= max_num_products:
       break
 
-    yield scrape_product_element(search_result)
+    try:
+      yield scrape_product_element(search_result)
+    except:
+      pass
+
+def escape_str(s):
+  return s.replace("'", "''")
 
 if __name__ == '__main__':
   parser = ArgumentParser()
@@ -61,7 +67,10 @@ if __name__ == '__main__':
 
   for product in scrape_products(args.product_name, args.max_results, region=args.region):
     print(INSERT_PRODUCT_SQL_FORMAT.format(
-      **product,
+      name=escape_str(product['name']),
+      description=escape_str(product['description']),
+      price=product['price'],
+      image_url=product['image_url'],
       seller_id=args.seller_id,
       category_id=args.category_id,
       is_sold=False,
