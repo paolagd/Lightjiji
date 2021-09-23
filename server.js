@@ -46,23 +46,15 @@ app.use((req, res, next) => {
     });
 });
 
-// Separated Routes for each Resource
-// Note: Feel free to replace the example routes below with your own
 const usersRoutes   = require("./routes/user-router");
 const productRoutes = require("./routes/product-router");
 const messageRoutes = require("./routes/message-router");
 const pageRoutes = require("./routes/page-router");
 
-// Mount all resource routes
-// Note: Feel free to replace the example routes below with your own
 app.use("/", pageRoutes);
 app.use("/api/users", usersRoutes);
 app.use("/api/products", productRoutes);
 app.use("/api/messages", messageRoutes);
-
-// Home page
-// Warning: avoid creating more routes in this file!
-// Separate them into separate routes files (see above).
 
 app.listen(PORT, () => {
   console.log(`Example app listening on port ${PORT}`);

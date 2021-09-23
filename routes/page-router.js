@@ -25,6 +25,7 @@ router.get('/login/:id', (req, res) => {
   res.redirect('/');
 });
 
+//LOGOUT
 router.get("/logout", (req, res) => {
   req.session = null;
   res.redirect("/");
@@ -84,7 +85,7 @@ router.post("/messages/:other_id", (req, res) => {
 // PRODUCTS ROUTES
 
 //GET products
-
+//Gets all categories, and products based on filters and renders products listings page
 router.get('/products', (req, res) => {
   const userId = req.session.user_id;
   const searchTerm = req.query.q || null;
@@ -117,14 +118,13 @@ router.get('/products', (req, res) => {
 
 
 //POST products
-
 router.post('/products', (req, res) => {
   const userId = req.session.user_id;
   if (!userId) {
     res.status(401).send('User not found')
     return;
   }
-  console.log(req.body);
+
   productQueries.createProductListing({ ...req.body, seller_id: userId })
     .then(product => {
       res.redirect("products/myListings");
