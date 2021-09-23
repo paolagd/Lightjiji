@@ -1,10 +1,14 @@
 INSERT INTO Products (seller_id, category_id, name, description, price, is_sold, is_featured, image_url)
-VALUES (1, 1, 'Dell Latitude 5500 i7-8665U, 32GB RAM, 2TB NVMe, Win10Pro', 'Dell Latitude 5500 Laptop 15.6" WLED (Intel 8th Gen i7-8665U, 32GB DDR4, 2TB NVMe Opal, Webcam Model / Part# Dell Latitude 5500 Condition: Open Box / Refurbished Cosmetic Grade: A+ Processor: 8th Gen ...', 169500, False, False, 'https://i.ebayimg.com/images/g/GjYAAOSw~Phgs-Pc/s-l200.jpg');
+VALUES (1, 1, 'hp 15.6" laptop(i7/8G)/Microsoft Surface Windows Tablet(i5/4G)', 'Microsoft Surface Pro 3 CPU Processor: Intel Core i5-4300 1.9GHz(4th Gen) Memory:4G DDR3 Storage :128GSSD Optical Drive: NO Interfaces & Ports: 3.0 USB (x1); MicroSD Card Reader Mini Display Port 1.2 ...Lowest prices in the market. One year warranty.
+No questions asked money back guarantee.', 29900, False, False, 'https://i.ebayimg.com/images/g/XHEAAOSw2hNhN4xb/s-l200.jpg');
 INSERT INTO Products (seller_id, category_id, name, description, price, is_sold, is_featured, image_url)
 VALUES (1, 1, '7" Tablet from $69/ 10" Laptop/Tablet from$129 NoTax', 'WHOLESALE WAREHOUSE OPEN TO PUBLIC ! PLEASE CHECK OUR OTHER ADS ON KIJIJI BY CLICKING VIEW POSTER''S OTHER ADS FOR GREAT DEALS! Labour Day Hours: 11am-5pm Location A: 38 Metropolitan Rd. Unit # 9 , ...', 6999, False, False, 'https://i.ebayimg.com/images/g/H6IAAOSwGwhhKKol/s-l200.jpg');
 INSERT INTO Products (seller_id, category_id, name, description, price, is_sold, is_featured, image_url)
-VALUES (1, 1, 'hp 15.6" laptop(i7/8G)/Microsoft Surface Windows Tablet(i5/4G)', 'Microsoft Surface Pro 3 CPU Processor: Intel Core i5-4300 1.9GHz(4th Gen) Memory:4G DDR3 Storage :128GSSD Optical Drive: NO Interfaces & Ports: 3.0 USB (x1); MicroSD Card Reader Mini Display Port 1.2 ...Lowest prices in the market. One year warranty.
-No questions asked money back guarantee.', 29900, False, False, 'https://i.ebayimg.com/images/g/XHEAAOSw2hNhN4xb/s-l200.jpg');
+VALUES (1, 1, 'I Will Buy your Macbook / Laptop for CASH!', 'Apple iMac Pro Air Mac Mini 12 11 13 15 16 21 27 inch 2013 2014 2015 2016 2017 2018 2019 2020 128GB 256GB 1TB 512GB M1 i7 i5 16GB RAM Microsoft Surface Book Pro 7 6 4 3 2 1 X Text! ** (647) 271-7753 ...', 7777700, False, False, 'https://i.ebayimg.com/images/g/9O8AAOSw~X1fmCSZ/s-l200.jpg');
+INSERT INTO Products (seller_id, category_id, name, description, price, is_sold, is_featured, image_url)
+VALUES (1, 1, 'Surface Pro 6 for Sale - $700 (cash only)', '8th Gen Intel Core, i5 Processor, 128GB - Go, 8GB - Go RAM. Used a handful of times. In perfect condition. Includes protective case, detachable keyboard, screen protector and original box. Bubble at ...', 70000, False, False, 'https://i.ebayimg.com/images/g/dG0AAOSwWEVhQ3sN/s-l200.jpg');
+INSERT INTO Products (seller_id, category_id, name, description, price, is_sold, is_featured, image_url)
+VALUES (1, 1, 'Brand New HP laptop bags', 'Many in stock get them while they last Hp laptop bags brand new in box', 2000, False, False, 'https://i.ebayimg.com/images/g/lJ8AAOSwPVJhAunm/s-l200.jpg');
 INSERT INTO Products (seller_id, category_id, name, description, price, is_sold, is_featured, image_url)
 VALUES (1, 1, 'S> Dell Latitude E7470, i7 6th gen, 256 SSD, 16gb DDR4 Ram, 14"', 'PRICE IS FIRM Non touch 14" 1080p screen. I7 6th gen processor 256 SSD 16gb Ram No cracks or damages, battery was recently swapped.', 31000, False, False, 'https://i.ebayimg.com/images/g/D4oAAOSwY8RhS9K6/s-l200.jpg');
 INSERT INTO Products (seller_id, category_id, name, description, price, is_sold, is_featured, image_url)
@@ -22,73 +26,35 @@ VALUES (1, 1, 'Mackbook Pro 13” 2017', 'Perfectly working macbook , never caus
 INSERT INTO Products (seller_id, category_id, name, description, price, is_sold, is_featured, image_url)
 VALUES (1, 1, 'Applecare Plus 2024 - 512GB SSD Macbook Pro M1 Chip✽', 'Up for sale is a late 2020 brand new sealed grey Macbook Pro 13 inch M1 chip 512GB SSD 8GB of memory w/3 Yrs Applecare+ warranty coverage. Apple price: $2,540. ✦✦ ====================== $1,950 cash ...', 195000, False, False, 'https://i.ebayimg.com/images/g/SKQAAOSw4jthS823/s-l200.jpg');
 INSERT INTO Products (seller_id, category_id, name, description, price, is_sold, is_featured, image_url)
-VALUES (1, 1, '!!Many Laptop Carrying Bags!!', 'Plenty of life left in these Laptop Carrying Bags and for a fraction of the cost ( prices range from $ 5 to $ 15 ). In perfect operating condition.', 500, False, False, 'https://i.ebayimg.com/images/g/IEEAAOSw4GVYTF4c/s-l200.jpg');
-INSERT INTO Products (seller_id, category_id, name, description, price, is_sold, is_featured, image_url)
 VALUES (1, 7, 'Jordan 4 Lightning', 'Jordan 4 Lightning ***IN HAND*** Ds og all with receipt Available Sizes: 10 10.5 11 13 $400 Pick up Downtown, Markham, or Mississauga', 40000, False, False, 'https://i.ebayimg.com/images/g/erMAAOSwF6NhLA~q/s-l200.jpg');
+INSERT INTO Products (seller_id, category_id, name, description, price, is_sold, is_featured, image_url)
+VALUES (1, 7, 'Bouncy Castle Rentals In The GTA', '**** THE MOST FUN YOU CAN HAVE WITH YOUR SHOES OFF! ***** Outdoor or garage rentals available - Great birthday present or just if you have bored kids at home. All of our equipment is newer and made ...', 0, False, False, 'https://i.ebayimg.com/images/g/Mz8AAOSwqShgsduy/s-l200.jpg');
 INSERT INTO Products (seller_id, category_id, name, description, price, is_sold, is_featured, image_url)
 VALUES (1, 7, 'Burberry low top rangleton  sneakers good condition SIZE 10', 'Sneakers come with original box and tags. This is the link on the burberry website - SIZE - 10 Text 647 769 2531 CASH ONLY You can find it on the burberry website too to verify - ...', 40000, False, False, 'https://i.ebayimg.com/images/g/zEIAAOSwYhdhR1W0/s-l200.jpg');
 INSERT INTO Products (seller_id, category_id, name, description, price, is_sold, is_featured, image_url)
-VALUES (1, 7, 'STEALTH +4 BIKE AUTO RACK (NEW) HOLDS 4 BIKES', 'NEVER BEEN USED STILL IN THE BOX Folding Narrow arm design fits a wide variety of bikes Padded feet protect your paint job, and prevent rack from moving Adjustable rubber support cradles and secure ...', 15000, False, False, 'https://i.ebayimg.com/images/g/1gQAAOSwZBNhS9NW/s-l200.jpg');
+VALUES (1, 7, 'Adidas Yeezy 350 v2 Light', 'US 10.5 DS OG all. Price is firm and pick up only After 5pm on weekdays, daytime on the weekend Tags: ts travis scott sacai fragment waffle off white bape supreme x dunk chrome hearts lv gucci stussy ...', 35000, False, False, 'https://i.ebayimg.com/images/g/EiYAAOSw2RVhS9Td/s-l200.jpg');
 INSERT INTO Products (seller_id, category_id, name, description, price, is_sold, is_featured, image_url)
-VALUES (1, 7, 'ABT American Ballet Theatre Black Kids Jazz Shoes - Size 1 EUC', 'ABT Black Kids Jazz Shoes Size 1. Not sure what street shoe size they are but probably would fit size 10/11. They are approx. 7" in length and are in excellent used condition. *Please measure your ...', 2500, False, False, 'https://i.ebayimg.com/images/g/xhYAAOSwKThgI01Y/s-l200.jpg');
+VALUES (1, 7, 'Reebok safety shoes ladies', 'Brand new ladies Reebok safety shoes / work shoes Ladies Size 6 Green tap Sale reason is took wrong size. After 3 months can’t return. Downtown pick up', 9900, False, False, 'https://i.ebayimg.com/images/g/lLAAAOSwS~ZhS9R7/s-l200.jpg');
 INSERT INTO Products (seller_id, category_id, name, description, price, is_sold, is_featured, image_url)
-VALUES (1, 7, 'Bloch Shockwave #3 Kids Flex Black Tap Shoes - EUC', 'These kids Bloch leather Tap shoes are in excellent used condition. Normal wear and tear at the toe. They are aprox. 8" in length. Do not know exact shoe size but possibly will fit street shoe size ...', 2500, False, False, 'https://i.ebayimg.com/images/g/usEAAOSwnKxgI0qr/s-l200.jpg');
+VALUES (1, 7, 'EL VAQUERO CRYSTAL COW GIRL BOOTS', 'REDUCED TO SELL TO 299.00 ORIGINAL PRICE 1,500.00 EL VAQUERO MADE IN ITALY OVER THE TOP CRYSTAL COWBOY BOOTS EMBELLISHED WITH CRYSTALS BEAUTIFUL QUALITY LEATHER SIZE 39 WILL FIT 8.5 NEW NEVER WORN ...', 29900, False, False, 'https://i.ebayimg.com/images/g/2W4AAOSwS9xhS9Qx/s-l200.jpg');
 INSERT INTO Products (seller_id, category_id, name, description, price, is_sold, is_featured, image_url)
-VALUES (1, 7, 'Prada Men''s Loafers Authentic', 'Brand new from the store. Never been worn! Serious inquiries only.', 50000, False, False, 'https://i.ebayimg.com/images/g/kqsAAOSw-QthS9Jg/s-l200.jpg');
+VALUES (1, 7, 'NWT Saucony Mens Everun Hurricane ISO Run Shoes - Blue (Size 8)', 'Selling brand new with tags still attached men’s Saucony Everun Hurricane ISO Running shoes in Blue/Black/Red. Available in size 8 US.', 5500, False, False, 'https://i.ebayimg.com/images/g/hjoAAOSwuahhS9R0/s-l200.jpg');
 INSERT INTO Products (seller_id, category_id, name, description, price, is_sold, is_featured, image_url)
-VALUES (1, 7, 'Prada sport mens leather sneakers', 'In excellent condition, only worn twice Comes with box and dust bag. Prada fits large, size 9 is actually a size 10 $400', 40000, False, False, 'https://i.ebayimg.com/images/g/KkYAAOSwKAZhS9Gu/s-l200.jpg');
+VALUES (1, 7, 'New Lady Godiva Pumps size 8.', 'New Lady Godiva Pumps size 8. Selling for $89.95 on Amazon. Buy it for $60. Swipe to see more.', 6000, False, False, 'https://i.ebayimg.com/images/g/NUwAAOSwMQ5esy4C/s-l200.jpg');
 INSERT INTO Products (seller_id, category_id, name, description, price, is_sold, is_featured, image_url)
-VALUES (1, 7, 'Louis Vuitton Men''s Leather Loafers', 'Brand new from the store. Never been worn! Serious inquiries only.', 50000, False, False, 'https://i.ebayimg.com/images/g/OPUAAOSw6f1hS9G5/s-l200.jpg');
+VALUES (1, 7, 'Brand new Kensie booties beige size 9 Still in box with tag', 'Brand new Kensie booties beige size 9 Still in box with tag', 4000, False, False, 'https://i.ebayimg.com/images/g/ZCkAAOSw77BhS9Pc/s-l200.jpg');
 INSERT INTO Products (seller_id, category_id, name, description, price, is_sold, is_featured, image_url)
-VALUES (1, 7, 'BNIB Thursday Boot Company Scout Men''s Chukka Boot (size 12)', 'Brand new in box, never worn! Thursday Boot Company Scout Men''s Chukka Boot (size 12). This boot is handcrafted with premium materials and is built to be very resilient. Selling because we received ...', 14000, False, False, 'https://i.ebayimg.com/images/g/dzsAAOSwgq1hS9EW/s-l200.jpg');
+VALUES (1, 7, 'Modern shoe cabinet - 14 pair', 'Selling a 14 pair shoe cabinet Product Details Gisela Modern And Contemporary Oak Brown Finished Wood 3-Door Shoe Storage Cabinet by The Twillery Co. $206.99 Weights & Dimensions Overall 26.3'''' H x ...', 9000, False, False, 'https://i.ebayimg.com/images/g/k4gAAOSwN8thS9PR/s-l200.jpg');
 INSERT INTO Products (seller_id, category_id, name, description, price, is_sold, is_featured, image_url)
-VALUES (1, 7, 'Fred Perry brogue boots', 'Soft brown leather Brogue print Mens size 43 us10 Excellent condition comes with box $50', 5000, False, False, 'https://i.ebayimg.com/images/g/EEQAAOSwFslhS9FE/s-l200.jpg');
+VALUES (1, 7, 'Alexander McQueen', 'Size 42 Comes with the box Perfect condition Serious inquiries', 40000, False, False, 'https://i.ebayimg.com/images/g/TIkAAOSwUZthS9OV/s-l200.jpg');
 INSERT INTO Products (seller_id, category_id, name, description, price, is_sold, is_featured, image_url)
-VALUES (1, 7, 'Maytag Neptune dry unit. - Dual dryer.  Two dryers in one', 'Just a perfect pair for a family. Upper unit - Dries, refreshes, steams and air dries.- great for dresses, suits, uniforms. Also can lay flat to dry sweaters, ball caps, shoes and delicates. Lower ...', 40000, False, False, 'https://i.ebayimg.com/images/g/RFAAAOSwdR1hS9Dg/s-l200.jpg');
+VALUES (1, 7, '( TOMMY HILFIGER) USED FOR ONCE SUPER CLEAN', 'Used only for once and clean perfectly. Size 8 (EU 41) Tommy Hilfiger', 5000, False, False, 'https://i.ebayimg.com/images/g/dbAAAOSw9oVhS9Ge/s-l200.jpg');
 INSERT INTO Products (seller_id, category_id, name, description, price, is_sold, is_featured, image_url)
-VALUES (1, 7, 'Shoes from India', '3. wallets brand new. 10 pairs of shoes brand new. Various sizes Personally brought them back from India Package price', 4500, False, False, 'https://i.ebayimg.com/images/g/M1QAAOSw6s5hKUjI/s-l200.jpg');
+VALUES (1, 7, 'Brand new Kensie booties beige size 9', 'Brand new Kensie booties beige size 9 Still in box with tag', 4000, False, False, 'https://i.ebayimg.com/images/g/HrEAAOSw8ixhS9Od/s-l200.jpg');
 INSERT INTO Products (seller_id, category_id, name, description, price, is_sold, is_featured, image_url)
-VALUES (1, 7, 'NWT Puma Ignite Flash EVOKnit Shoes - Size 8 US', 'Brand new in box, never worn. Available in Size 8 US Turn heads with offset lacing and sleek, monochromatic design lines in the tech-forward IGNITE Flash evoKNIT, perfect both for everyday wear and ...', 6000, False, False, 'https://i.ebayimg.com/images/g/9p4AAOSwEnthS9Cy/s-l200.jpg');
+VALUES (1, 7, 'Givenchy', 'Givenchy elastic urban knots sneakers Size 41 Box available Perfect condition Proof of purchase available Serious inquiries only Low-top buffed calfskin sneakers in white. Round toe. Elasticized ...', 50000, False, False, 'https://i.ebayimg.com/images/g/j3cAAOSwTIJhS9Mw/s-l200.jpg');
 INSERT INTO Products (seller_id, category_id, name, description, price, is_sold, is_featured, image_url)
-VALUES (2, 8, '2018 Ford Mustang Shelby GT350R. 526HP, RECARO, NAV, CAM, MAGNARIDE', '2018 FORD MUSTANG GT350R | 5.2L V8 | MANUAL | 526 HP | BACKUP CAMERA | RECARO SEATS | BREMBO BRAKES | ADAPTIVE SUSPENSION | ADAPTIVE STEERING | PUSH TO START | KEYLESS ENTRY | BLUETOOTH | PHONE ...The future of luxury lives here.Manual
-                                                    
-                                                    
-                                                
-                                            
-                                        
-
-                                        
-                                    
-                                
-                            
-                                
-                            
-                                
-                            
-                                
-                            
-                                
-                                    
-                                    
-                                    
-                                        
-                                            
-                                                
-                                                     | 
-                                                    
-                                                    3,236
-                                                
-                                            
-
-                                            
-
-                                            
-                                        
-
-                                        
-                                            km', 12980000, False, False, 'https://i.ebayimg.com/images/g/iRcAAOSw-B1hQ6X0/s-l200.jpg');
-INSERT INTO Products (seller_id, category_id, name, description, price, is_sold, is_featured, image_url)
-VALUES (2, 8, '2017 Subaru Legacy LIMITED | BLIND | NAV | H/K SOUND | ALLOYS | SUNROOF | XENONS', '[CLEAN CARFAX - NO ACCIDENTS] 1 OWNER CANADIAN LEASE RETURN **HIGH VALUE OPTIONS: BLIND SPOT INDICATORS | NAVIGATION | PADDLE SHIFTERS | H/K SOUND | HARMON KARDON PREMIUM AUDIO | BLACK LEATHER / ...Now with 2 Locations on King St. E To Serve You Better [ 1290 & 1620 King St. E Kitchener ]Automatic
+VALUES (2, 8, '2015 Toyota Sienna XLE LOADED! NAV! - AWD', 'XLE AWD! LOADED! NAVIGATION, LEATHER, SUNROOF, POWER SLIDING DOORS, BACK UP CAM, LANE DEPARTURE SYSTEM, BLUETOOTH AND MUCH MORE! CLEAN CARFAX REPORT WITH NO ISSUES! MUST BE SEEN AND DRIVEN! Buy with ...FINANCING AVAILABLE! GOOD, BAD OR NO CREDIT? WE CAN HELP! SERVING THE GTA SINCE 1979! CALL US AT 416 699-6630 OR VISIT US ONLINE!Automatic
                                                     
                                                     
                                                 
@@ -117,7 +83,7 @@ VALUES (2, 8, '2017 Subaru Legacy LIMITED | BLIND | NAV | H/K SOUND | ALLOYS | S
                                                 
                                                      | 
                                                     
-                                                    25,420
+                                                    146,078
                                                 
                                             
 
@@ -127,9 +93,9 @@ VALUES (2, 8, '2017 Subaru Legacy LIMITED | BLIND | NAV | H/K SOUND | ALLOYS | S
                                         
 
                                         
-                                            km', 2296200, False, False, 'https://i.ebayimg.com/images/g/naQAAOSw8CBhSvph/s-l200.jpg');
+                                            km', 2588800, False, False, 'https://i.ebayimg.com/images/g/kU4AAOSwJT9hSq9j/s-l200.jpg');
 INSERT INTO Products (seller_id, category_id, name, description, price, is_sold, is_featured, image_url)
-VALUES (2, 8, '2021 Mercedes-Benz G-Class AMG G63, AWD, 577HP, G MANUFAKTUR PKG, MASSAGE', '2021 MERCEDES-BENZ AMG G63 | 577HP | 4.0L V8 | G MANUFAKTUR PACKAGE | G MANUFAKTUR NAPPA LEATHER PLATINUM WHITE BLACK | LEATHER DASH AND HANDLES | SEAT COMFORT PACKAGE PLUS | MASSAGE SEATS | 22in. ...The future of luxury lives here.Automatic
+VALUES (2, 8, '2017 RAM 1500 ST 3.6L V6 | 4x4 | BACK UP CAMERA', 'Ram 1500 SXT Quad Cab 4x4 - 3.6L V6 - AC - Power Windows - Keyless Entry - Power Locks - Cruise Control - Back Up Camera - Power Mirrors ************************************************************** ...No payments for 3 months available OAC! 1-year powertrain warranties INCLUDED in our advertised price for a limited time!Automatic
                                                     
                                                     
                                                 
@@ -158,89 +124,7 @@ VALUES (2, 8, '2021 Mercedes-Benz G-Class AMG G63, AWD, 577HP, G MANUFAKTUR PKG,
                                                 
                                                      | 
                                                     
-                                                    8,670
-                                                
-                                            
-
-                                            
-
-                                            
-                                        
-
-                                        
-                                            km', 30980000, False, False, 'https://i.ebayimg.com/images/g/lwUAAOSwCeBhRCO0/s-l200.jpg');
-INSERT INTO Products (seller_id, category_id, name, description, price, is_sold, is_featured, image_url)
-VALUES (2, 8, '2017 Subaru Forester 5dr Wgn CVT 2.5i Limited w/Tech Pkg', 'MONTERO AUTO CENTRE MONTERO AUTO CENTRE We are OPEN! Come in and see us today! We are proudly serving the entire province of Ontario! We offer rates as low as 3.99% with $0 Down, no payments for 3 ...Automatic
-                                                    
-                                                    
-                                                
-                                            
-                                        
-
-                                        
-                                            
-                                            
-                                        
-                                    
-                                
-                            
-                                
-                            
-                                
-                            
-                                
-                            
-                                
-                                    
-                                    
-                                    
-                                        
-                                            
-                                                
-                                                     | 
-                                                    
-                                                    93,163
-                                                
-                                            
-
-                                            
-
-                                            
-                                        
-
-                                        
-                                            km', 2088800, False, False, 'https://i.ebayimg.com/images/g/vcYAAOSwdANhRhCR/s-l200.jpg');
-INSERT INTO Products (seller_id, category_id, name, description, price, is_sold, is_featured, image_url)
-VALUES (2, 8, '2020 Mercedes-Benz C-Class C300|4MATIC|AMGPKG|LIKE-NEW|NAV|LED|WOOD|LEATHER|+', '**MONTH-END SPECIAL!** LIKE NEW! ONLY 3719 KMS! FEATURING : AMG PACKAGE! HIGHLY EQUIPPED, EXTREMELY CLEAN! FINISHED IN WHITE ON MATCHING BLACK INTERIOR, BLACK ROOF, WOOD GRAIN TRIMS, STITCHED LEATHER ...CALL 1 (866) 799-6107 | FAVORITMOTORSCANADA.CA | REQUEST A CARPROOF TODAY - FINANCING AVAILABLE* (conditions may apply)Automatic
-                                                    
-                                                    
-                                                
-                                            
-                                        
-
-                                        
-                                            
-                                            
-                                        
-                                    
-                                
-                            
-                                
-                            
-                                
-                            
-                                
-                            
-                                
-                                    
-                                    
-                                    
-                                        
-                                            
-                                                
-                                                     | 
-                                                    
-                                                    3,719
+                                                    104,300
                                                 
                                             
 
@@ -306,7 +190,89 @@ VALUES (2, 8, '2020 Mercedes-Benz C-Class C300|4MATIC|AMGPKG|LIKE-NEW|NAV|LED|WO
                             
 
                             
-                                 |CARFAX Canada Report', 5099500, False, False, 'https://i.ebayimg.com/images/g/pz4AAOSwRBthSA8e/s-l200.jpg');
+                                 |CARFAX Canada Report', 3199500, False, False, 'https://i.ebayimg.com/images/g/kCoAAOSwBd1hM2-d/s-l200.jpg');
+INSERT INTO Products (seller_id, category_id, name, description, price, is_sold, is_featured, image_url)
+VALUES (2, 8, '2008 Subaru Outback 2.5i w/Touring Pkg', 'TOURING! PANORAMIC SUNROOF! AWD! AUTO! POWER WINDOWS! POWER LOCKS! CRUISE CONTROL! ICE COLD A/C! HEATED SEAT! POWER SEAT! AND SO MUCH MORE! VERY NICE CLEAN INSIDE OUT?BODY NO RUST! DRIVE NICE AND ...Automatic
+                                                    
+                                                    
+                                                
+                                            
+                                        
+
+                                        
+                                            
+                                            
+                                        
+                                    
+                                
+                            
+                                
+                            
+                                
+                            
+                                
+                            
+                                
+                                    
+                                    
+                                    
+                                        
+                                            
+                                                
+                                                     | 
+                                                    
+                                                    161,500
+                                                
+                                            
+
+                                            
+
+                                            
+                                        
+
+                                        
+                                            km', 649900, False, False, 'https://i.ebayimg.com/images/g/VSIAAOSw7LhhSwNL/s-l200.jpg');
+INSERT INTO Products (seller_id, category_id, name, description, price, is_sold, is_featured, image_url)
+VALUES (2, 8, '2019 Land Rover Range Rover Sport HST MHEV HYBRID, 395HP, NAV, CAM, PANO, HEATED, BT', '2019 LAND ROVER RANGE ROVER SPORT HST MHEV | HYBRID | 4WD | 395 HP | BLACK OUT PACK | NAVIGATION | PANORAMIC SUNROOF | BACK UP CAMERA | BLIND SPOT ASSIST | LANE KEEP ASSIST | VENTED FRONT SEATS | ...The future of luxury lives here.Automatic
+                                                    
+                                                    
+                                                
+                                            
+                                        
+
+                                        
+                                            
+                                            
+                                        
+                                    
+                                
+                            
+                                
+                            
+                                
+                            
+                                
+                            
+                                
+                                    
+                                    
+                                    
+                                        
+                                            
+                                                
+                                                     | 
+                                                    
+                                                    21,028
+                                                
+                                            
+
+                                            
+
+                                            
+                                        
+
+                                        
+                                            km', 9580000, False, False, 'https://i.ebayimg.com/images/g/ur0AAOSw62thQ6YH/s-l200.jpg');
 INSERT INTO Products (seller_id, category_id, name, description, price, is_sold, is_featured, image_url)
 VALUES (2, 8, '2017 Toyota RAV4 LE AWD | 1 Owner | Keyless Entry | New tires', 'Certified. CARFAX Canada One Owner New Tires, Bluetooth, Keyless entry, Adaptive cruise control, Lane keeping assistance, Lane departure warning system, Backup camera, New cabin & air filters, New ...Automatic
                                                     
@@ -594,15 +560,21 @@ VALUES (2, 8, '2014 Toyota Camry LE, clean carfax, non smoker, low km, certified
                                         
                                             km', 1420000, False, False, 'https://i.ebayimg.com/images/g/zUoAAOSwDmxhSLQ4/s-l200.jpg');
 INSERT INTO Products (seller_id, category_id, name, description, price, is_sold, is_featured, image_url)
-VALUES (4, 2, 'KITCHEN CABINETS & QUARTZ SALE -FREE INSTALLATION!!✦4165589945✦', 'Call:416-558-9945 or visit www.queenkitchens.com Don''t miss our CABINET & QUARTZ COUNTERTOP SALE! Package includes: 10'' x 10'' MADE IN CANADA MDF Kitchen Cabinets + Quartz Countertop All handles and ...', 490000, False, False, 'https://i.ebayimg.com/images/g/E3oAAOSw9xJeQBjr/s-l200.jpg');
+VALUES (4, 2, 'SALE!! SALE!! Bathroom Vanities Wood Cabinets Quartz Countertops', 'SALE!! SALE!! SALE!! SALE!! SALE!! Bathroom Vanities - In Stock - Ready to Pick Up - LOW PRICES Bathroom Vanities - Wood Cabinets with Quartz Countertops - Soft Close Drawers & Doors EXCELLENT ...', 100, False, False, 'https://i.ebayimg.com/images/g/u-MAAOSwXRxhQJ~G/s-l200.jpg');
 INSERT INTO Products (seller_id, category_id, name, description, price, is_sold, is_featured, image_url)
-VALUES (4, 2, 'Small tables, green cabinet & DeLonghi Penguino portable a/c', 'All items in very good/like new condition. The photo quality is not indicative of the furniture quality, when reducing the size for Kijiji it lost a lot of detail, let me know if you''d like to see ...', 4000, False, False, 'https://i.ebayimg.com/images/g/g5EAAOSw0yRhS8SN/s-l200.jpg');
+VALUES (4, 2, 'Content sale', 'Various furniture must go. 4 chairs $40 2 barstools $30 2 floating shelve boxes $20 Tall bookcase $50 Medium bookcase $35 Glass Cabinet $35 Dining bench $50 Desk $35 Media Cabinet $30 Nursery ...', 0, False, False, 'https://i.ebayimg.com/images/g/oeUAAOSwcAxhR1BW/s-l200.jpg');
 INSERT INTO Products (seller_id, category_id, name, description, price, is_sold, is_featured, image_url)
-VALUES (4, 2, 'Don''t Pay Condo Prices!! Apartments FOR RENT in SCARBOROUGH', '1 Brimley rd. Bright! Clean! Fully renovated apartments! 1 bedroom / 2 bedrooms available starting at $1650 up to $1750 , great neighbourhood. - All-new kitchen cabinets and stainless steel ...', 165000, False, False, 'https://i.ebayimg.com/images/g/BPMAAOSw-PVgx1pB/s-l200.jpg');
+VALUES (4, 2, 'Cabinet Makers & Installers', 'We are a Custom Kitchen Cabinet Maker Located in Scarborough. We are looking for Experienced Cabinet Maker & Installer to Join our Team. Please us at 4168789393', 0, False, False, 'https://i.ebayimg.com/images/g/Ic4AAOSw26lhN~CK/s-l200.jpg');
+INSERT INTO Products (seller_id, category_id, name, description, price, is_sold, is_featured, image_url)
+VALUES (4, 2, 'nice interior renovation job', 'we got a professional team for house renovation job ,basement finish ,washroom remodel ,kitchen remodel,hardwood floor ,tile installation,stairs remodel ,door replace ,custom vanity and cabinet ...', 0, False, False, 'https://i.ebayimg.com/images/g/2zgAAOSwa2RgY3YP/s-l200.jpg');
+INSERT INTO Products (seller_id, category_id, name, description, price, is_sold, is_featured, image_url)
+VALUES (4, 2, 'Modern shoe cabinet - 14 pair', 'Selling a 14 pair shoe cabinet Product Details Gisela Modern And Contemporary Oak Brown Finished Wood 3-Door Shoe Storage Cabinet by The Twillery Co. $206.99 Weights & Dimensions Overall 26.3'''' H x ...', 9000, False, False, 'https://i.ebayimg.com/images/g/k4gAAOSwN8thS9PR/s-l200.jpg');
 INSERT INTO Products (seller_id, category_id, name, description, price, is_sold, is_featured, image_url)
 VALUES (4, 2, 'Don''t Pay Condo Prices!! Apartments FOR RENT in SCARBOROUGH', '1 Brimley rd. Bright! Clean! Fully renovated apartments! 1 bedroom / 2 bedrooms available starting at $1650 up to $1750 , great neighbourhood. - All-new kitchen cabinets and stainless steel ...', 165000, False, False, 'https://i.ebayimg.com/images/g/BPMAAOSw-PVgx1pB/s-l200.jpg');
 INSERT INTO Products (seller_id, category_id, name, description, price, is_sold, is_featured, image_url)
 VALUES (4, 2, 'HUTCH.', 'Perfect condition display cabinet. Honey oak wood, perfect condition. Must sell, moving on Saturday Only $75.00. Please call 416-759-1234', 7500, False, False, 'https://i.ebayimg.com/images/g/nYQAAOSwg6thS9A~/s-l200.jpg');
+INSERT INTO Products (seller_id, category_id, name, description, price, is_sold, is_featured, image_url)
+VALUES (4, 2, 'COSTCO BESTAR WALLBED MURPHY BED INSTALLATION ASSEMBLY SERVICES', '- Trusted Master Murphy Bed, Wallbed Installation Assembly Services. - We provide in the GTA Murphy Bed, Wallbeds (Costco, Bestar, Wayfair, Custom) Cabinet, Closets Installation assembly services. - ...', 0, False, False, 'https://i.ebayimg.com/images/g/75YAAOSwIPFhS84r/s-l200.jpg');
 INSERT INTO Products (seller_id, category_id, name, description, price, is_sold, is_featured, image_url)
 VALUES (4, 2, 'Display Cabinet with Glass Doors', '$30 and in great condition', 3000, False, False, 'https://i.ebayimg.com/images/g/sbEAAOSwPKxhS818/s-l200.jpg');
 INSERT INTO Products (seller_id, category_id, name, description, price, is_sold, is_featured, image_url)
@@ -612,25 +584,43 @@ VALUES (4, 2, 'Whiskey Barrel Shelves / Amish made', 'These are full size heavy 
 INSERT INTO Products (seller_id, category_id, name, description, price, is_sold, is_featured, image_url)
 VALUES (4, 2, 'Kitchen Cabinets - $200 (For Sale)', 'I am renovating my kitchen, so I wish to sell these cabinets if anyone needs.', 20000, False, False, 'https://i.ebayimg.com/images/g/U6AAAOSwIXRhS8gu/s-l200.jpg');
 INSERT INTO Products (seller_id, category_id, name, description, price, is_sold, is_featured, image_url)
-VALUES (4, 2, '110°  Cabinet Pantry Hinge, Full Overlay, frameless Install', '$20.00 for 12 hinges MINIMUM, ($2.00 each). Less than 12, $300 each. 110 degree; CLIP top Hinge, Full Overlay, Screw-On, for frameless cabinets. Can be used with self-closing hinges too, ( split on ...', 200, False, False, 'https://i.ebayimg.com/images/g/fMQAAOSwCB5f21VO/s-l200.jpg');
+VALUES (4, 2, '6 seater sectional', '6 seater good condition sectional couch with cushions and complementary black mirrored coffee table.', 190000, False, False, 'https://i.ebayimg.com/images/g/kXYAAOSwWnthPTQh/s-l200.jpg');
+INSERT INTO Products (seller_id, category_id, name, description, price, is_sold, is_featured, image_url)
+VALUES (4, 2, 'SOFA COUCH SET CLEAR OUT ONLY 299.99 FOR 3 CHAIRS', 'SOFA COUCH SET CLEAR OUT ONLY 299.99 FOR 3 CHAIRS BEAUTIFUL ALL LEATHER OR BONDED LEATHER SOFA COUCH CLEAR OUT SOME COME WITH USB, LED LIGHT UNDER FIRST COME - FIRST SERVE CALL 416 850 3771 WE ARE ...', 30000, False, False, 'https://i.ebayimg.com/images/g/Cq0AAOSw7JRhDpXa/s-l200.jpg');
 INSERT INTO Products (seller_id, category_id, name, description, price, is_sold, is_featured, image_url)
 VALUES (4, 2, '100% leather Juno sectional black', 'Gorgeous black Juno sectional Great quality genuine leather. Three seater sofa with an attaching right arm "bumper" which is wider at the end like a raindrop 90" x 89" purchased for over 4000 We are ...', 130000, False, False, 'https://i.ebayimg.com/images/g/MicAAOSwJN5hSAWq/s-l200.jpg');
 INSERT INTO Products (seller_id, category_id, name, description, price, is_sold, is_featured, image_url)
-VALUES (4, 2, 'Sectional Grey sofa couch ( left)', 'Grey sectional couch. In pristine condition. Right chaise swivels and reclines as shown in picture. Solid wood construction. Has been steam cleaned. Sleeps 2 comfortably for stayovers.', 99900, False, False, 'https://i.ebayimg.com/images/g/eswAAOSwmqthPykn/s-l200.jpg');
+VALUES (4, 2, 'Couch, Carpet and Rug cleaning service -  647 627 4110', 'With over 20 years of industry experience, we work hard to ensure that customers are not only satisfied with the quality of our work, but also with the overall experience. You can expect both ...', 0, False, False, 'https://i.ebayimg.com/images/g/ykQAAOSwqYNg6JLj/s-l200.jpg');
 INSERT INTO Products (seller_id, category_id, name, description, price, is_sold, is_featured, image_url)
-VALUES (4, 2, 'Oskar Leather Sofa EQ3', 'Oskar leather sofa. Colour gray. In perfect condition, no tears or scratches. Smoke and pet free home. 85” wide, 36” deep, 32 “ high. Paid $2295 plus tax. Pick up only. Proof of purchase available ...', 130000, False, False, 'https://i.ebayimg.com/images/g/V6kAAOSwWflhRi6b/s-l200.jpg');
+VALUES (4, 2, 'Free couch!', 'This is a beautiful, large, comfy leather couch. The seats need to be patched, covered or reupholstered, but is in otherwise good condition. Free to whoever can come and remove it from our home.', 0, False, False, 'https://i.ebayimg.com/images/g/XdIAAOSw6HNhSKLX/s-l200.jpg');
 INSERT INTO Products (seller_id, category_id, name, description, price, is_sold, is_featured, image_url)
-VALUES (4, 2, 'Stylish Formal Living Room Couch 3-Seater (light green)', 'Downsizing - Estate Sale - Help out a Mom/Grand Mom... 1 x Formal Stylish and OH My GOSH Comfy 3-Seater Living Room Couch (light green). Dimensions: 32" high x 76" long x 26" deep We are having a ...', 1950025000, False, False, 'https://i.ebayimg.com/images/g/nzYAAOSwEp1hRnik/s-l200.jpg');
+VALUES (4, 2, 'Good condition Toronto-made three-seater couch', 'Good condition Toronto-made three-seater couch. 78" wide x 36" deep. $200', 20000, False, False, 'https://i.ebayimg.com/images/g/FLEAAOSwMmZhS9S2/s-l200.jpg');
 INSERT INTO Products (seller_id, category_id, name, description, price, is_sold, is_featured, image_url)
-VALUES (4, 2, 'Sofa and loveseat', 'Leathers sofa and loveseat.', 15000, False, False, 'https://i.ebayimg.com/images/g/-IUAAOSwEnthS9J8/s-l200.jpg');
+VALUES (4, 2, 'Couch, Carpet and Rug cleaning service -  647 627 4110', 'With over 20 years of industry experience, we work hard to ensure that customers are not only satisfied with the quality of our work, but also with the overall experience. You can expect both ...', 0, False, False, 'https://i.ebayimg.com/images/g/0nwAAOSwl69g6IwT/s-l200.jpg');
+INSERT INTO Products (seller_id, category_id, name, description, price, is_sold, is_featured, image_url)
+VALUES (4, 2, 'Couch, Carpet and Rug cleaning service -  647 627 4110', 'With over 20 years of industry experience, we work hard to ensure that customers are not only satisfied with the quality of our work, but also with the overall experience. You can expect both ...', 0, False, False, 'https://i.ebayimg.com/images/g/oX8AAOSwzulg6JLe/s-l200.jpg');
+INSERT INTO Products (seller_id, category_id, name, description, price, is_sold, is_featured, image_url)
+VALUES (4, 2, 'Couch, Carpet and Rug cleaning service -  647 627 4110', 'With over 20 years of industry experience, we work hard to ensure that customers are not only satisfied with the quality of our work, but also with the overall experience. You can expect both ...', 0, False, False, 'https://i.ebayimg.com/images/g/ykQAAOSwqYNg6JLj/s-l200.jpg');
 INSERT INTO Products (seller_id, category_id, name, description, price, is_sold, is_featured, image_url)
 VALUES (4, 2, 'Couches, Recliners, & Sectionals On Sale Now | Warehouse Sale | Delivery Available', 'We carry a large variety ofcouches, recliners, and sectionals to suit every home of all sizes and needs. · Delivery Available Across Canada · Easy At Home Assembly · Made From High Quality Materials · EXCELLENT CUSTOMER SERVICE Our showroom is located at: 1601 Matheson Blvd, Unit 6, Mississauga, ON Have a question?', 49900, False, False, 'https://i.ebayimg.com/images/g/YuwAAOSwc~lhJxc3/s-l200.jpg');
 INSERT INTO Products (seller_id, category_id, name, description, price, is_sold, is_featured, image_url)
+VALUES (4, 2, 'Sofa and loveseat', 'Leathers sofa and loveseat.', 15000, False, False, 'https://i.ebayimg.com/images/g/-IUAAOSwEnthS9J8/s-l200.jpg');
+INSERT INTO Products (seller_id, category_id, name, description, price, is_sold, is_featured, image_url)
 VALUES (4, 2, 'SUMMER SALE !! SOFA BED!  SECTIONALS !! BED FRAMES!!MATRESS!!', 'SUMMER SALE!!! UP TO 70% OFF!!!!! SALE ON SECTIONALS SOFA BEDS SOFA SETS RECLINER SETS DINING SETS BED FRAMES MATTRESS KIDS BEDROOM SETS BUNK BEDS BEDROOM SETS CUSTOM MADE SOFAS COFFEE TABLE COMPUTER ...', 5900, False, False, 'https://i.ebayimg.com/images/g/3tkAAOSwqPBhOpFj/s-l200.jpg');
+INSERT INTO Products (seller_id, category_id, name, description, price, is_sold, is_featured, image_url)
+VALUES (4, 2, 'Sofa', 'It’s in nice condition', 0, False, False, 'https://i.ebayimg.com/images/g/bYEAAOSwjtphS9Bk/s-l200.jpg');
 INSERT INTO Products (seller_id, category_id, name, description, price, is_sold, is_featured, image_url)
 VALUES (4, 2, 'L shape sofa couch', 'L shape sofa couches. In good condition Brown and creamy sofa.', 20000, False, False, 'https://i.ebayimg.com/images/g/kDAAAOSwuChg4KNp/s-l200.jpg');
 INSERT INTO Products (seller_id, category_id, name, description, price, is_sold, is_featured, image_url)
-VALUES (5, 1, 'I Will Buy your Macbook / Laptop for CASH!', 'Apple iMac Pro Air Mac Mini 12 11 13 15 16 21 27 inch 2013 2014 2015 2016 2017 2018 2019 2020 128GB 256GB 1TB 512GB M1 i7 i5 16GB RAM Microsoft Surface Book Pro 7 6 4 3 2 1 X Text! ** (647) 271-7753 ...', 7777700, False, False, 'https://i.ebayimg.com/images/g/9O8AAOSw~X1fmCSZ/s-l200.jpg');
+VALUES (5, 1, 'MacBook Repair, Keyboard, Screen, Logic board repair+6m WRTY', 'We are open, we are essential service. Call 416-551-2790. We specialize in the repairs of all MacBook issues, our success rate is great on liquid damage MacBooks. ...', 0, False, False, 'https://i.ebayimg.com/images/g/9k8AAOSwQdhgKgWC/s-l200.jpg');
+INSERT INTO Products (seller_id, category_id, name, description, price, is_sold, is_featured, image_url)
+VALUES (5, 1, 'MacBook Pro / Touch-Bar  Battery Replacement - 6 MONTH WARRANTY', '12 + YEARS of EXPERIENCE Certified Technicians Call us for a Free Quote 647-560-0659 w w w . GTA Mac Repair . com Monday-Sunday 11:00 AM-7:00 PM We don On-Site Installation of many batteries. OEM ...', 0, False, False, 'https://i.ebayimg.com/images/g/6IsAAOSwdHNeesJe/s-l200.jpg');
+INSERT INTO Products (seller_id, category_id, name, description, price, is_sold, is_featured, image_url)
+VALUES (5, 1, 'MacBook Pro / iMac / Air Fast and Loud Fan  Repair', 'Call us for a Free Quote 647-560-0659 or visit: w w w . GTA Mac Repair . com STARTING AT $45 get a new fan WE OFFER ON-Site Installation and upgrades for most devices. Monday-Sunday 11:00 AM-7:00 PM ...', 0, False, False, 'https://i.ebayimg.com/images/g/e-QAAOSwKW1euvWs/s-l200.jpg');
+INSERT INTO Products (seller_id, category_id, name, description, price, is_sold, is_featured, image_url)
+VALUES (5, 1, 'MacBook Pro / Touch Bar /Air KeyBoard  + TrackPad', 'Call us for a Free Quote 647-560-0659 or visit: w w w . GTA Mac Repair . com STARTING AT $60 + Free Cleaning service WE OFFER ON-Site SSD Installation and upgrades for most devices. Monday-Sunday ...', 0, False, False, 'https://i.ebayimg.com/images/g/9xsAAOSwDCpeuvPN/s-l200.jpg');
+INSERT INTO Products (seller_id, category_id, name, description, price, is_sold, is_featured, image_url)
+VALUES (5, 1, '2009-2020 MACBOOK PRO/AIR EFI/ICLOUD Password Removal', 'Highly recommended and certified Mac Repair in Toronto. **************Remember Cell Phone repair shops can''t Repair Mac*********************** EFI/Firmware Unlock for Apple Mac book Pro Retina/Non ...', 0, False, False, 'https://i.ebayimg.com/images/g/FdsAAOSwi8lhQN3z/s-l200.jpg');
 INSERT INTO Products (seller_id, category_id, name, description, price, is_sold, is_featured, image_url)
 VALUES (5, 1, '♦2021 Custom-Built 64GB i9 5.0Ghz 2TB Macbook Pro 16" Applecare+', 'Latest 2021 custom-built, brand new sealed Macbook Pro 16-inch (space grey, Applecare+ 3 years until 2024). _______________________________ Super powerful Spec: 5.0Ghz turbo boost w/2.4Ghz i9 8-core ...', 575000, False, False, 'https://i.ebayimg.com/images/g/XfYAAOSw~V9hS9J1/s-l200.jpg');
 INSERT INTO Products (seller_id, category_id, name, description, price, is_sold, is_featured, image_url)

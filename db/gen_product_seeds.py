@@ -14,7 +14,11 @@ SEARCH_URL_FORMAT = 'https://www.kijiji.ca/{region}/{search_term}/page-{page_num
 
 def scrape_product_element(product_element):
   price_text = product_element.find('div', class_='price').get_text(strip=True)
-  price = int(price_text.replace('$', '').replace(',', '').replace('.', ''))
+  price_text = price_text.replace('$', '').replace(',', '')
+  if '.' not in price_text:
+    price_text += '00'
+  price_text = price_text.replace('.', '')
+  price = int(price_text)
 
   name = product_element.find('div', class_='title').get_text(strip=True)
   description = product_element.find('div', class_='description').get_text(strip=True)
