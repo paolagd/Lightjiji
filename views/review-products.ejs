@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -8,38 +9,56 @@
   <!-- Bootstrap CSS -->
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-F3w7mX95PdgyTmZZMECAngseQB83DfGTowi0iMjiWaeVhAn4FJkqJByhZMI3AhiU" crossorigin="anonymous">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" integrity="sha512-1ycn6IcaQQ40/MKBW2W4Rhis/DbILU74C1vSrLJxCq57o941Ym01SwNsOMqvEBFlcgUa6xLiPY/NS5R+E6ztJQ==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+  <!-- Styles -->
   <link rel="stylesheet" href="/styles/header.css" type="text/css" />
   <link rel="stylesheet" href="/styles/review-products.css" type="text/css" />
 
-  <title><%= product.name %></title>
+  <title>
+    <%= product.name %>
+  </title>
 </head>
-<body>
-  <%- include('partials/_header') %>
-  <main>
-    <div class="container">
-      <div class="row">
-        <div class="col-xl-7 product-info">
-          <h2><%= product.name %></h2>
-          <h3>$<%= product.price/100 %></h3>
-          <img src = <%= product.image_url %>>
-          <h4><%= product.description%></h4>
-        </div>
-        <div class="col-xl-4 contact-seller">
-          <h5>Posted <%= timeago.format(product.created_on) %></h5>
-          <form action="/messages/<%= product.seller_id %>" method="POST">
-            <h3>Contact Seller</h3>
-            <h6>Your Message:</h6>
-            <textarea class="form-control" rows="5" placeholder="Hi, I'm interested! Please contact me if this is still available." name="message"></textarea>
-            <div class="d-grid gap-2 col-6 mx-auto">
-            <input type="submit" class="btn btn-primary mx-auto" value="Send Message"/>
-          </div>
-        </form>
-      </div>
-    </div>
-  </main>
-  <!-- Bootstrap JS -->
-  <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.3/dist/umd/popper.min.js" integrity="sha384-W8fXfP3gkOKtndU4JGtKDvXbO53Wy8SZCQHczT5FMiiqmQfUpWbYdTil/SxwZgAN" crossorigin="anonymous"></script>
-  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/js/bootstrap.min.js" integrity="sha384-skAcpIdS7UcVUC05LJ9Dxay8AXcDYfBJqt1CJ85S/CFujBsIzCIv+l9liuYLaMQ/" crossorigin="anonymous"></script>
-</body>
-</html>
 
+<body>
+  <!-- import header -->
+  <%- include('partials/_header') %>
+    <main>
+      <div class="container">
+        <div class="row">
+          <div class="col-xl-7 product-info">
+            <h2>
+              <%= product.name %>
+            </h2>
+            <h3>$<%= product.price/100 %>
+            </h3>
+            <img src=<%=product.image_url %>>
+            <h4>
+              <%= product.description%>
+            </h4>
+          </div>
+          <div class="col-xl-4 contact-seller">
+            <h5>Posted <%= timeago.format(product.created_on) %>
+            </h5>
+            <form action="/messages/<%= product.seller_id %>" method="POST">
+              <h3>Contact Seller</h3>
+              <h6>Your Message:</h6>
+              <textarea class="form-control" rows="5"
+                placeholder="Hi, I'm interested! Please contact me if this is still available."
+                name="message"></textarea>
+              <div class="d-grid gap-2 col-6 mx-auto">
+                <input type="submit" class="btn btn-primary mx-auto" value="Send Message" />
+              </div>
+            </form>
+          </div>
+        </div>
+    </main>
+    <!-- Bootstrap JS -->
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.3/dist/umd/popper.min.js"
+      integrity="sha384-W8fXfP3gkOKtndU4JGtKDvXbO53Wy8SZCQHczT5FMiiqmQfUpWbYdTil/SxwZgAN"
+      crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/js/bootstrap.min.js"
+      integrity="sha384-skAcpIdS7UcVUC05LJ9Dxay8AXcDYfBJqt1CJ85S/CFujBsIzCIv+l9liuYLaMQ/"
+      crossorigin="anonymous"></script>
+</body>
+
+</html>
