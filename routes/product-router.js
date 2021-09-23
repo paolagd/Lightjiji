@@ -18,7 +18,11 @@ router.get('/', (req, res) => {
   let productsPromise = productQueries.getProductsSatisfying(req.query);
   let categories = categoryQueries.getAllCategories();
 
-  Promise.all([productsPromise, categories])
+  Promise.all(
+    [
+      productsPromise,
+      categories
+    ])
     .then(result => {
       const templateVars = {
         searchTerm,
@@ -47,7 +51,6 @@ router.post('/', (req, res) => {
     .then(product => {
       res.redirect("/api/products/myListings");
     })
-
     .catch(errorMessage => res.status(500).json({ error: errorMessage }));
 });
 
