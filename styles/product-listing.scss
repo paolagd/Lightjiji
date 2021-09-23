@@ -4,10 +4,9 @@
   aside{
     height: 50vh;
   }
-
 }
 
-a{
+.view-product{
   text-decoration:none;
    color:inherit;
 }
@@ -32,6 +31,12 @@ a{
     text-align: end;
     color: green;
   }
+
+  .product-description{
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+  }
 }
 
 // Large devices (desktops, 992px and up)
@@ -39,5 +44,4 @@ a{
   .product-listing-container{
     margin-top: 10vh;
   }
-
 }

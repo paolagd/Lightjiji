@@ -55,509 +55,509 @@ INSERT INTO Products (seller_id, category_id, name, description, price, is_sold,
 VALUES (1, 7, 'Givenchy', 'Givenchy elastic urban knots sneakers Size 41 Box available Perfect condition Proof of purchase available Serious inquiries only Low-top buffed calfskin sneakers in white. Round toe. Elasticized ...', 50000, False, False, 'https://i.ebayimg.com/images/g/j3cAAOSwTIJhS9Mw/s-l200.jpg');
 INSERT INTO Products (seller_id, category_id, name, description, price, is_sold, is_featured, image_url)
 VALUES (2, 8, '2015 Toyota Sienna XLE LOADED! NAV! - AWD', 'XLE AWD! LOADED! NAVIGATION, LEATHER, SUNROOF, POWER SLIDING DOORS, BACK UP CAM, LANE DEPARTURE SYSTEM, BLUETOOTH AND MUCH MORE! CLEAN CARFAX REPORT WITH NO ISSUES! MUST BE SEEN AND DRIVEN! Buy with ...FINANCING AVAILABLE! GOOD, BAD OR NO CREDIT? WE CAN HELP! SERVING THE GTA SINCE 1979! CALL US AT 416 699-6630 OR VISIT US ONLINE!Automatic
-                                                    
-                                                    
-                                                
-                                            
-                                        
 
-                                        
-                                            
-                                            
-                                        
-                                    
-                                
-                            
-                                
-                            
-                                
-                            
-                                
-                            
-                                
-                                    
-                                    
-                                    
-                                        
-                                            
-                                                
-                                                     | 
-                                                    
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+                                                     |
+
                                                     146,078
-                                                
-                                            
 
-                                            
 
-                                            
-                                        
 
-                                        
+
+
+
+
+
+
                                             km', 2588800, False, False, 'https://i.ebayimg.com/images/g/kU4AAOSwJT9hSq9j/s-l200.jpg');
 INSERT INTO Products (seller_id, category_id, name, description, price, is_sold, is_featured, image_url)
 VALUES (2, 8, '2017 RAM 1500 ST 3.6L V6 | 4x4 | BACK UP CAMERA', 'Ram 1500 SXT Quad Cab 4x4 - 3.6L V6 - AC - Power Windows - Keyless Entry - Power Locks - Cruise Control - Back Up Camera - Power Mirrors ************************************************************** ...No payments for 3 months available OAC! 1-year powertrain warranties INCLUDED in our advertised price for a limited time!Automatic
-                                                    
-                                                    
-                                                
-                                            
-                                        
 
-                                        
-                                            
-                                            
-                                        
-                                    
-                                
-                            
-                                
-                            
-                                
-                            
-                                
-                            
-                                
-                                    
-                                    
-                                    
-                                        
-                                            
-                                                
-                                                     | 
-                                                    
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+                                                     |
+
                                                     104,300
-                                                
-                                            
 
-                                            
 
-                                            
-                                        
 
-                                        
+
+
+
+
+
+
                                             km
-                                            
-                                        
-                                    
-                                
-                            
-                                
-                            
-                                
-                            
-                                
-                            
-                                
-                            
-                                
-                            
-                                
-                            
-                                
-                            
-                                
-                            
-                                
-                            
-                                
-                            
-                                
-                            
-                                
-                            
-                                
-                            
-                                
-                            
-                                
-                            
-                                
-                            
-                                
-                            
-                                
-                            
-                                
-                            
-                                
-                            
-                                
-                            
-                                
-                            
-                                
-                            
 
-                            
 
-                            
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
                                  |CARFAX Canada Report', 3199500, False, False, 'https://i.ebayimg.com/images/g/kCoAAOSwBd1hM2-d/s-l200.jpg');
 INSERT INTO Products (seller_id, category_id, name, description, price, is_sold, is_featured, image_url)
 VALUES (2, 8, '2008 Subaru Outback 2.5i w/Touring Pkg', 'TOURING! PANORAMIC SUNROOF! AWD! AUTO! POWER WINDOWS! POWER LOCKS! CRUISE CONTROL! ICE COLD A/C! HEATED SEAT! POWER SEAT! AND SO MUCH MORE! VERY NICE CLEAN INSIDE OUT?BODY NO RUST! DRIVE NICE AND ...Automatic
-                                                    
-                                                    
-                                                
-                                            
-                                        
 
-                                        
-                                            
-                                            
-                                        
-                                    
-                                
-                            
-                                
-                            
-                                
-                            
-                                
-                            
-                                
-                                    
-                                    
-                                    
-                                        
-                                            
-                                                
-                                                     | 
-                                                    
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+                                                     |
+
                                                     161,500
-                                                
-                                            
 
-                                            
 
-                                            
-                                        
 
-                                        
+
+
+
+
+
+
                                             km', 649900, False, False, 'https://i.ebayimg.com/images/g/VSIAAOSw7LhhSwNL/s-l200.jpg');
 INSERT INTO Products (seller_id, category_id, name, description, price, is_sold, is_featured, image_url)
 VALUES (2, 8, '2019 Land Rover Range Rover Sport HST MHEV HYBRID, 395HP, NAV, CAM, PANO, HEATED, BT', '2019 LAND ROVER RANGE ROVER SPORT HST MHEV | HYBRID | 4WD | 395 HP | BLACK OUT PACK | NAVIGATION | PANORAMIC SUNROOF | BACK UP CAMERA | BLIND SPOT ASSIST | LANE KEEP ASSIST | VENTED FRONT SEATS | ...The future of luxury lives here.Automatic
-                                                    
-                                                    
-                                                
-                                            
-                                        
 
-                                        
-                                            
-                                            
-                                        
-                                    
-                                
-                            
-                                
-                            
-                                
-                            
-                                
-                            
-                                
-                                    
-                                    
-                                    
-                                        
-                                            
-                                                
-                                                     | 
-                                                    
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+                                                     |
+
                                                     21,028
-                                                
-                                            
 
-                                            
 
-                                            
-                                        
 
-                                        
+
+
+
+
+
+
                                             km', 9580000, False, False, 'https://i.ebayimg.com/images/g/ur0AAOSw62thQ6YH/s-l200.jpg');
 INSERT INTO Products (seller_id, category_id, name, description, price, is_sold, is_featured, image_url)
 VALUES (2, 8, '2017 Toyota RAV4 LE AWD | 1 Owner | Keyless Entry | New tires', 'Certified. CARFAX Canada One Owner New Tires, Bluetooth, Keyless entry, Adaptive cruise control, Lane keeping assistance, Lane departure warning system, Backup camera, New cabin & air filters, New ...Automatic
-                                                    
-                                                    
-                                                
-                                            
-                                        
 
-                                        
-                                            
-                                            
-                                        
-                                    
-                                
-                            
-                                
-                            
-                                
-                            
-                                
-                            
-                                
-                                    
-                                    
-                                    
-                                        
-                                            
-                                                
-                                                     | 
-                                                    
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+                                                     |
+
                                                     71,705
-                                                
-                                            
 
-                                            
 
-                                            
-                                        
 
-                                        
+
+
+
+
+
+
                                             km', 2199500, False, False, 'https://i.ebayimg.com/images/g/CDkAAOSww-BhSvsS/s-l200.jpg');
 INSERT INTO Products (seller_id, category_id, name, description, price, is_sold, is_featured, image_url)
 VALUES (2, 8, '2013 Honda Civic Sdn EX MODEL 5 SPEED MANUAL ! DRIVES OUT GREAT !', 'M&M AUTO SALES JUST ARRIVED ON THE LOT ! BEAUTIFUL BLACK ON BLACK HONDA CIVIC 5 SPEED MANUAL TRANSMISSION ! - GREAT CLUTCH SAFETY IS ADDITIONAL Engine: 4 Cylinder Engine 1.8L L/100Km City: 7.2 ...Manual
-                                                    
-                                                    
-                                                
-                                            
-                                        
 
-                                        
-                                    
-                                
-                            
-                                
-                            
-                                
-                            
-                                
-                            
-                                
-                                    
-                                    
-                                    
-                                        
-                                            
-                                                
-                                                     | 
-                                                    
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+                                                     |
+
                                                     153,449
-                                                
-                                            
 
-                                            
 
-                                            
-                                        
 
-                                        
+
+
+
+
+
+
                                             km', 749900, False, False, 'https://i.ebayimg.com/images/g/KTcAAOSwZ5hhSLPF/s-l200.jpg');
 INSERT INTO Products (seller_id, category_id, name, description, price, is_sold, is_featured, image_url)
 VALUES (2, 8, '2020 Porsche Cayenne COUPE|SPORT CHRONO PKG|PREM PLUS|B.SPOT|BOSE|LOADED', '***COUPE, SPORT CHRONO PACKAGE*** ACCIDNET FREE, ONE OWNER, CANADIAN VEHICLE*** FINANCE STARTING AT 4.99% OPEN LOAN O.A.C NO PAYMENTS FOR 3 MONTHS*** Jet Black Metallic on Black Leather Interior, ...Automatic
-                                                    
-                                                    
-                                                
-                                            
-                                        
 
-                                        
-                                            
-                                            
-                                        
-                                    
-                                
-                            
-                                
-                            
-                                
-                            
-                                
-                            
-                                
-                                    
-                                    
-                                    
-                                        
-                                            
-                                                
-                                                     | 
-                                                    
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+                                                     |
+
                                                     10,000
-                                                
-                                            
 
-                                            
 
-                                            
-                                        
 
-                                        
+
+
+
+
+
+
                                             km', 10589900, False, False, 'https://i.ebayimg.com/images/g/mpMAAOSwUZthSvhZ/s-l200.jpg');
 INSERT INTO Products (seller_id, category_id, name, description, price, is_sold, is_featured, image_url)
 VALUES (2, 8, '2017 Maserati Quattroporte GRAN LUSSO|SQ4|B.SPOT|HARMAN KARDON|VALVETRONIC|FULLY LOADED', '***GRAN LUSSO*** ACCIDENT FREE*** FINANCE WITH $2000 DOWN AT 4.99% ONLY $530 BI-WEEKLY 84 MONTH OPEN LOAN O.A.C. NO PAYMENTS FOR 3 MONTHS*** White with Full Matte Grey 3M Wrap on Red Perforated ...Automatic
-                                                    
-                                                    
-                                                
-                                            
-                                        
 
-                                        
-                                            
-                                            
-                                        
-                                    
-                                
-                            
-                                
-                            
-                                
-                            
-                                
-                            
-                                
-                                    
-                                    
-                                    
-                                        
-                                            
-                                                
-                                                     | 
-                                                    
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+                                                     |
+
                                                     45,000
-                                                
-                                            
 
-                                            
 
-                                            
-                                        
 
-                                        
+
+
+
+
+
+
                                             km', 7299900, False, False, 'https://i.ebayimg.com/images/g/H0wAAOSwF5FhSvhe/s-l200.jpg');
 INSERT INTO Products (seller_id, category_id, name, description, price, is_sold, is_featured, image_url)
 VALUES (2, 8, 'Used Car Batteries in Stock. Exchange your dead battery for only $50', 'QUALITY TESTED USED CAR BATTERY FOR SALE - ALL MAKES AND MODELS - ONLY $50 WHEN YOU BRING YOUR OLD BATTERY - INSTALLATION AVAILABLE FOR $20 - HUGE INVENTORY (NO BMW / MERCEDES) CALL TODAY 416-256-4843 LOCATION: 7 VANLEY CRESCENT, TORONTO HOURS: MON-FRI 9-5', 5000, False, False, 'https://i.ebayimg.com/images/g/~vgAAOSwd9hePc8v/s-l200.jpg');
 INSERT INTO Products (seller_id, category_id, name, description, price, is_sold, is_featured, image_url)
 VALUES (2, 8, '2016 Chrysler Town & Country 4dr Wgn Touring', 'Ontario quality motors FINANCING AVAILABLE? Yes, Absolutely! We offer financing for any type of credit, Good Credit, Bad Credit and No Credit! HAVE A TRADE-IN? Trade-in vehicles are always welcome-if ...Automatic
-                                                    
-                                                    
-                                                
-                                            
-                                        
 
-                                        
-                                            
-                                            
-                                        
-                                    
-                                
-                            
-                                
-                            
-                                
-                            
-                                
-                            
-                                
-                                    
-                                    
-                                    
-                                        
-                                            
-                                                
-                                                     | 
-                                                    
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+                                                     |
+
                                                     149,000
-                                                
-                                            
 
-                                            
 
-                                            
-                                        
 
-                                        
+
+
+
+
+
+
                                             km', 1499500, False, False, 'https://i.ebayimg.com/images/g/nCQAAOSwdFthJ25i/s-l200.jpg');
 INSERT INTO Products (seller_id, category_id, name, description, price, is_sold, is_featured, image_url)
 VALUES (2, 8, '2008 Chevrolet Tahoe LTZ', 'ONTARIO QUALITY MOTORS HIGHLIGHTS -5.3L V8 Engine -Four Speed Automatic Transmission -Four Wheel Drive System -3 Row Seating -Navigation -Rearview Camera -Power Liftgate -Power Sunroof -Power ...Automatic
-                                                    
-                                                    
-                                                
-                                            
-                                        
 
-                                        
-                                            
-                                            
-                                        
-                                    
-                                
-                            
-                                
-                            
-                                
-                            
-                                
-                            
-                                
-                                    
-                                    
-                                    
-                                        
-                                            
-                                                
-                                                     | 
-                                                    
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+                                                     |
+
                                                     165,000
-                                                
-                                            
 
-                                            
 
-                                            
-                                        
 
-                                        
+
+
+
+
+
+
                                             km', 1499500, False, False, 'https://i.ebayimg.com/images/g/GgoAAOSweSlhNJ1S/s-l200.jpg');
 INSERT INTO Products (seller_id, category_id, name, description, price, is_sold, is_featured, image_url)
 VALUES (2, 8, '2014 Toyota Camry LE, clean carfax, non smoker, low km, certified!', 'clean carfax, certified, low kms, well maintained, in excellent condition, non smoker, touch screen display, back up camera, remote keyless entry, auto windows/locks, spacious and comfortabel seating ...Automatic
-                                                    
-                                                    
-                                                
-                                            
-                                        
 
-                                        
-                                            
-                                            
-                                        
-                                    
-                                
-                            
-                                
-                            
-                                
-                            
-                                
-                            
-                                
-                                    
-                                    
-                                    
-                                        
-                                            
-                                                
-                                                     | 
-                                                    
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+                                                     |
+
                                                     59,500
-                                                
-                                            
 
-                                            
 
-                                            
-                                        
 
-                                        
+
+
+
+
+
+
                                             km', 1420000, False, False, 'https://i.ebayimg.com/images/g/zUoAAOSwDmxhSLQ4/s-l200.jpg');
 INSERT INTO Products (seller_id, category_id, name, description, price, is_sold, is_featured, image_url)
 VALUES (4, 2, 'SALE!! SALE!! Bathroom Vanities Wood Cabinets Quartz Countertops', 'SALE!! SALE!! SALE!! SALE!! SALE!! Bathroom Vanities - In Stock - Ready to Pick Up - LOW PRICES Bathroom Vanities - Wood Cabinets with Quartz Countertops - Soft Close Drawers & Doors EXCELLENT ...', 100, False, False, 'https://i.ebayimg.com/images/g/u-MAAOSwXRxhQJ~G/s-l200.jpg');
@@ -602,7 +602,7 @@ VALUES (4, 2, 'Couch, Carpet and Rug cleaning service -  647 627 4110', 'With ov
 INSERT INTO Products (seller_id, category_id, name, description, price, is_sold, is_featured, image_url)
 VALUES (4, 2, 'Couch, Carpet and Rug cleaning service -  647 627 4110', 'With over 20 years of industry experience, we work hard to ensure that customers are not only satisfied with the quality of our work, but also with the overall experience. You can expect both ...', 0, False, False, 'https://i.ebayimg.com/images/g/ykQAAOSwqYNg6JLj/s-l200.jpg');
 INSERT INTO Products (seller_id, category_id, name, description, price, is_sold, is_featured, image_url)
-VALUES (4, 2, 'Couches, Recliners, & Sectionals On Sale Now | Warehouse Sale | Delivery Available', 'We carry a large variety ofcouches, recliners, and sectionals to suit every home of all sizes and needs. · Delivery Available Across Canada · Easy At Home Assembly · Made From High Quality Materials · EXCELLENT CUSTOMER SERVICE Our showroom is located at: 1601 Matheson Blvd, Unit 6, Mississauga, ON Have a question?', 49900, False, False, 'https://i.ebayimg.com/images/g/YuwAAOSwc~lhJxc3/s-l200.jpg');
+VALUES (4, 2, 'Couches, Recliners, & Sectionals On Sale Now | Warehouse Sale | Delivery Available', 'We carry a large variety ofcouches, recliners, and sectionals to suit every home of all sizes and needs. · Delivery Available Across Canada ', 49900, False, False, 'https://i.ebayimg.com/images/g/YuwAAOSwc~lhJxc3/s-l200.jpg');
 INSERT INTO Products (seller_id, category_id, name, description, price, is_sold, is_featured, image_url)
 VALUES (4, 2, 'Sofa and loveseat', 'Leathers sofa and loveseat.', 15000, False, False, 'https://i.ebayimg.com/images/g/-IUAAOSwEnthS9J8/s-l200.jpg');
 INSERT INTO Products (seller_id, category_id, name, description, price, is_sold, is_featured, image_url)

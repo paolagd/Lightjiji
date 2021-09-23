@@ -1,5 +1,6 @@
 $(() => {
 
+  //reloads page to avoid showing incorrect favorite button
   window.addEventListener( "pageshow", function ( event ) {
     if(performance.navigation.type == 2){
       location.reload();
